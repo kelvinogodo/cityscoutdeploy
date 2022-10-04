@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import Parser from 'html-react-parser'
 import { Autoplay, Pagination} from "swiper";
 
-const blog = ({featuredposts}) => {
+const Blog = ({featuredposts}) => {
     const [featuredpostArray,setFeaturedpostArray] = useState(featuredposts.filter(post =>(post.category == 'featured' && post)))
   return (
     <main className='blog-page'>
@@ -120,4 +120,4 @@ export const getStaticProps = async ()=>{
         revalidate:60,
     }
 }
-export default blog
+export default Blog

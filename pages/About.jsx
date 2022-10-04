@@ -4,7 +4,7 @@ import {GiProgression} from 'react-icons/gi'
 import {RiShieldUserFill} from 'react-icons/ri'
 import {SiFsecure} from 'react-icons/si'
 import {BsLightbulb} from 'react-icons/bs'
-const about = () => {
+const About = () => {
   return (
     <>
     <Head>
@@ -100,4 +100,4 @@ const about = () => {
   )
 }
 
-export default about
+export default About

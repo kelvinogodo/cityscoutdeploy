@@ -5,7 +5,7 @@ import {MdUpdate} from 'react-icons/md'
 import {AiOutlineSafety} from 'react-icons/ai'
 import {GiProgression} from 'react-icons/gi'
 import {FaCity} from 'react-icons/fa'
-const service = () => {
+const Service = () => {
   return (
     <main className='service-page'>
       <Head>
@@ -41,4 +41,4 @@ const service = () => {
   )
 }
 
-export default service
+export default Service

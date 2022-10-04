@@ -6,7 +6,7 @@ import {FaFacebookSquare} from 'react-icons/fa'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
-const contact = () => {
+const Contact = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -77,4 +77,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact

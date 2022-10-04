@@ -11,7 +11,7 @@ import {ImUserPlus} from 'react-icons/im'
 import {IoIosSwitch} from 'react-icons/io'
 import {MdEdit} from 'react-icons'
 import {RiEdit2Fill} from 'react-icons/ri'
-const dashboard = () => {
+const Dashboard = () => {
     const [showOverview, setShowOverview] = useState(true)
     const [showCreatePostSection, setShowPostCreateSection] = useState(false)
     const [showCreatePropertySection, setShowPropertyCreateSection] = useState(false)
@@ -137,4 +137,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard

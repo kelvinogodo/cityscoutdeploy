@@ -8,7 +8,7 @@ import Link from 'next/link'
 import {BsSearch} from 'react-icons/bs'
 import Card from '../components/Card'
 import { useState } from 'react'
-const properties = ({properties}) => {
+const Properties = ({properties}) => {
   const [filter,setFilter]= useState(properties)
     
       const filterProperties = (title,keyword)=>{
@@ -105,4 +105,4 @@ export const getStaticProps = async () =>{
     }
   }
 }
-export default properties
+export default Properties
