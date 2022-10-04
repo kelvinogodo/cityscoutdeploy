@@ -55,8 +55,8 @@ export default function Home({featuredposts,data}) {
 export const getStaticProps = async ()=>{
   const [req,getProperties] = await Promise.all( 
     [
-      fetch('http://localhost:3000/api/posts'),
-      fetch('http://localhost:3000/api/properties')
+      fetch('/api/posts'),
+      fetch('/api/properties')
     ]);
   const [featuredposts, data] = await Promise.all([req.json(),getProperties.json()])
   return{

@@ -111,7 +111,7 @@ const Blog = ({featuredposts}) => {
   )
 }
 export const getStaticProps = async ()=>{
-    const req = await fetch('http://localhost:3000/api/posts')
+    const req = await fetch('/api/posts')
     const featuredposts = await req.json()
     return{
         props:{

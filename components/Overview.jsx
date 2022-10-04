@@ -18,8 +18,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [properties,setProperties]= useState() 
   const fetchData = async ()=>{
     const [postRequest, propertyRequest] = await Promise.all ([
-     fetch('http://localhost:3000/api/posts'),
-     fetch('http://localhost:3000/api/properties')
+     fetch('/api/posts'),
+     fetch('/api/properties')
     ])
     const [posts,propertiesArray] = await Promise.all ([
      postRequest.json(),
@@ -57,7 +57,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await fetch('http://localhost:3000/api/createPost',
+    const req = await fetch('/api/createPost',
     {
       method:'POST',
       headers:{
@@ -106,7 +106,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       backViewImage:`${backViewImage}`,
       type:propertyType,
     }
-    const request = await fetch('http://localhost:3000/api/createProperty',
+    const request = await fetch('/api/createProperty',
     {
       method:'POST',
       headers:{
@@ -136,7 +136,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete post function 
   const deletePost = async (id)=>{
-    const deleteRequest = await fetch(`http://localhost:3000/api/deletePost`,
+    const deleteRequest = await fetch(`/api/deletePost`,
     {
       method:'POST',
       headers:{
@@ -166,7 +166,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete property function 
   const deleteProperty = async (id)=>{
-    const deleteRequest = await fetch(`http://localhost:3000/api/deleteProperty`,
+    const deleteRequest = await fetch(`/api/deleteProperty`,
     {
       method:'POST',
       headers:{
@@ -217,7 +217,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const editProperty = async (e)=>{
     e.preventDefault()
-    const req = await fetch('http://localhost:3000/api/editProperty',
+    const req = await fetch('/api/editProperty',
     {
       method: 'POST',
       headers :{
@@ -264,7 +264,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     console.log(editedPost)
 
-    const editRequest = await fetch('http://localhost:3000/api/editPost',
+    const editRequest = await fetch('/api/editPost',
     {
       method:'POST',
       headers:{
@@ -321,7 +321,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch('http://localhost:3000/api/upload',
+    const req = await fetch('/api/upload',
     {
       method:'POST',
       body:formData
@@ -337,7 +337,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       formData.append('theFiles',file)
     } )
     console.log(uploadImage)
-    const req = await fetch('http://localhost:3000/api/uploadPropertyImages',
+    const req = await fetch('/uploadPropertyImages',
     {
       method:'POST',
       body:formData

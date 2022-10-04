@@ -10,7 +10,7 @@ const Admin = () => {
       email:email,
       password:password
     }
-    const request = await fetch('http://localhost:3000/api/createAdmin',
+    const request = await fetch('/api/createAdmin',
     {
       method: 'POST',
       headers: {
@@ -35,7 +35,7 @@ const Admin = () => {
         email:email,
         password:password
       }
-      const req = await fetch('http://localhost:3000/api/login',
+      const req = await fetch('/api/login',
       {
         method:'POST',
         headers :{
