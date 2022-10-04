@@ -18,8 +18,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [properties,setProperties]= useState() 
   const fetchData = async ()=>{
     const [postRequest, propertyRequest] = await Promise.all ([
-     fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/posts'),
-     fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/properties')
+     fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts'),
+     fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/properties')
     ])
     const [posts,propertiesArray] = await Promise.all ([
      postRequest.json(),
@@ -57,7 +57,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/createPost',
+    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/createPost',
     {
       method:'POST',
       headers:{
@@ -106,7 +106,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       backViewImage:`${backViewImage}`,
       type:propertyType,
     }
-    const request = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/createProperty',
+    const request = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/createProperty',
     {
       method:'POST',
       headers:{
@@ -136,7 +136,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete post function 
   const deletePost = async (id)=>{
-    const deleteRequest = await fetch(`https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/deletePost`,
+    const deleteRequest = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/deletePost`,
     {
       method:'POST',
       headers:{
@@ -166,7 +166,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete property function 
   const deleteProperty = async (id)=>{
-    const deleteRequest = await fetch(`https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/deleteProperty`,
+    const deleteRequest = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/deleteProperty`,
     {
       method:'POST',
       headers:{
@@ -217,7 +217,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const editProperty = async (e)=>{
     e.preventDefault()
-    const req = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/editProperty',
+    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/editProperty',
     {
       method: 'POST',
       headers :{
@@ -264,7 +264,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     console.log(editedPost)
 
-    const editRequest = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/editPost',
+    const editRequest = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/editPost',
     {
       method:'POST',
       headers:{
@@ -321,7 +321,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/upload',
+    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/upload',
     {
       method:'POST',
       body:formData

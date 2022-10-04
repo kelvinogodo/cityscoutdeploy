@@ -55,8 +55,8 @@ export default function Home({featuredposts,data}) {
 export const getStaticProps = async ()=>{
   const [req,getProperties] = await Promise.all( 
     [
-      fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/posts'),
-      fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/properties')
+      fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts'),
+      fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/properties')
     ]);
   const [featuredposts, data] = await Promise.all([req.json(),getProperties.json()])
   return{
