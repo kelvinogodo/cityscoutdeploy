@@ -37,7 +37,7 @@ const Posts = ({post}) => {
 export const getStaticProps = async (context)=>{
   const id = context.params.id
   try{
-    const req = await fetch(`/api/posts/${id}`)
+    const req = await fetch(`https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/posts/${id}`)
     const post = await req.json()
     console.log(post)
     return{
@@ -52,7 +52,7 @@ export const getStaticProps = async (context)=>{
   
 }
 export const getStaticPaths = async()=>{
-  const req = await fetch(`/api/posts`)
+  const req = await fetch(`https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/posts`)
   const posts = await req.json()
   const ids = posts.map(post =>(post.title))
   const paths = ids.map(id =>({params : {id : id.trim()}}))

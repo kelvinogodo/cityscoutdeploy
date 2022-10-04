@@ -97,7 +97,7 @@ const [searchKeywords, setSearchKeywords] = useState()
   )
 }
 export const getStaticProps = async () =>{
-  const req = await fetch('/api/properties')
+  const req = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/properties')
   const properties = await req.json()
   return{
     props:{

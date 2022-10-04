@@ -10,7 +10,7 @@ const Admin = () => {
       email:email,
       password:password
     }
-    const request = await fetch('/api/createAdmin',
+    const request = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/createAdmin',
     {
       method: 'POST',
       headers: {
@@ -35,7 +35,7 @@ const Admin = () => {
         email:email,
         password:password
       }
-      const req = await fetch('/api/login',
+      const req = await fetch('https://cityscoutdeploy-62o5wagm3-kelvinogodo.vercel.app/api/login',
       {
         method:'POST',
         headers :{
