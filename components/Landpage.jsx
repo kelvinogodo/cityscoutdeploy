@@ -99,7 +99,7 @@ const Landpage = () => {
               </h1>
               <h2>city scout reators connects you with verified and worthy properties for sale in ebonyi state.    
               </h2>
-              <Link href='/properties'>explore</Link>
+              <Link href='/Properties'>explore</Link>
           </div>
           </div>
         </div>

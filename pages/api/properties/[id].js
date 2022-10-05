@@ -3,7 +3,7 @@ import {connectMongo} from '../../../utils/connectMongo'
 export default async function handler({query:{id}}, res) {
     await connectMongo()
     const properties = await Properties.find()
-    if(properties !== null){
+    if(properties !== []){
         const filteredProperty =  properties.filter(property =>(property._id == id ))
         if(filteredProperty.length > 0){
             res.status(200).json(filteredProperty[0])

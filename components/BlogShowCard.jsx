@@ -7,7 +7,7 @@ const BlogShowCard = () => {
             have a property in ebonyi state for sale ?
           </h1>
           <p>There is no better way to sell your land and houses faster than let us handle it. we have buyers, who are ready to pay for their worth. </p>
-          <Link href="/contact" className="sort-btn">
+          <Link href="/Contact" className="sort-btn">
             let us know
           </Link>
         </div>

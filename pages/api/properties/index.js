@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     await connectMongo()
     console.log('CONNECTED TO MONGODB FOR FECTHING PROPERTIES....')
     const properties = await Properties.find()
-    if(properties !== null){
+    if(properties !== []){
         res.status(200).json(properties)
     }
     else{
