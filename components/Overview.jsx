@@ -478,7 +478,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             createPost()
             uploadFile()
             }}>
-            <input type="text" required placeHolder='post title'className='input' 
+            <input type="text" required placeholder='post title'className='input' 
             onChange={(e)=>{
               const title = e.target.value.toString()
               setPostTitle(title)
@@ -487,7 +487,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             <div className="tiptap-container">
               <TipTap setPostBody={setPostBody} body={''}/>
             </div>
-            <input type="text" placeHolder='post author' className='input'
+            <input type="text" placeholder='post author' className='input'
               onChange={(e)=>{
                 const author = e.target.value.toString()
                 setPostAuthor(author)
@@ -518,7 +518,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           </div>
           <div className="overview ProseMirror">
             {postTitle && <h1>{postTitle}</h1>}
-            { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeHolder='blur'/> }
+            { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeholder='blur'/> }
             {postBody && <div className="post-body">
               {parser(postBody)}
             </div>}
@@ -532,15 +532,15 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             createProperty()
             uploadPropertyImages()
           }}>
-            <input type="text" placeHolder='property price'className='input' onChange={(e)=>{
+            <input type="text" placeholder='property price'className='input' onChange={(e)=>{
               const price  = e.target.value.toString()
               setPropertyPrice(price)
             }}/>
-            <input type="text" placeHolder='property location' className='edit-input' onChange={(e)=>{
+            <input type="text" placeholder='property location' className='edit-input' onChange={(e)=>{
               const location  = e.target.value.toString()
               setPropertyLocation(location)
             }} />
-            <textarea type="text" placeHolder='property description' className='create-post-textarea' onChange={(e)=>{
+            <textarea type="text" placeholder='property description' className='create-post-textarea' onChange={(e)=>{
               const description  = e.target.value.toString()
               setPropertyDescription(description)
             }}/>
@@ -578,9 +578,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             {propertyDescription && <p>{propertyDescription}</p>}
             {propertyLocation && <p>{propertyLocation}</p>}
             {propertyPrice && <p>{propertyPrice}</p>}
-            { frontViewImage && <Image height={300} width={400} alt='post image preview' src={`/${frontViewImage}`} blurDataURL={`/${frontViewImage}`} placeHolder='blur'/> }
-            { sideViewImage && <Image height={300} width={400} alt='post image preview' src={`/${sideViewImage}`} blurDataURL={`/${sideViewImage}`} placeHolder='blur'/> }
-            { backViewImage && <Image height={300} width={400} alt='post image preview' src={`/${backViewImage}`} blurDataURL={`/${backViewImage}`} placeHolder='blur'/> }
+            { frontViewImage && <Image height={300} width={400} alt='post image preview' src={`/${frontViewImage}`} blurDataURL={`/${frontViewImage}`} placeholder='blur'/> }
+            { sideViewImage && <Image height={300} width={400} alt='post image preview' src={`/${sideViewImage}`} blurDataURL={`/${sideViewImage}`} placeholder='blur'/> }
+            { backViewImage && <Image height={300} width={400} alt='post image preview' src={`/${backViewImage}`} blurDataURL={`/${backViewImage}`} placeholder='blur'/> }
           </div>
           </section>
           }

@@ -59,7 +59,7 @@ const SearchInput = ({inputClass,filterProperties,properties}) => {
         {categories.map(category =>(
             category.active && 
             <div className="input-container" key={category.placeHolderText}>
-                <input type="text" className='search-input' placeHolder={`${category.placeHolderText}`} onChange={(e)=>{
+                <input type="text" className='search-input' placeholder={`${category.placeHolderText}`} onChange={(e)=>{
                     setSearchKeywords(e.target.value.toLowerCase())
                     filterProperties(category.title,searchKeywords)
                 }} onFocus={()=>{getList(category.title)}}/>
