@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import Swal from 'sweetalert2'
+
 const app = {
   API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
 };
@@ -38,7 +40,12 @@ const Admin = () => {
     )
     const res = await request.json()
     if(res.status === 200){
-      window.location.href= '/dashboard' 
+      Swal.fire(
+        'congrats',
+        'welcome boss! ',
+        'success'
+      )
+      window.location.href= '/Dashboard' 
     }
   }
 
@@ -64,10 +71,15 @@ const Admin = () => {
       const res = await req.json()
       if (res.status == 200){
         localStorage.setItem('user','admin')
-        window.location.href = '/dashboard'
+        Swal.fire(
+          'congrats',
+          'welcome boss! ',
+          'success'
+        )
+        window.location.href = '/Dashboard'
       }
       else{
-        window.location.href = '/admin'
+        window.location.href = '/Admin'
       }
   }
   return (

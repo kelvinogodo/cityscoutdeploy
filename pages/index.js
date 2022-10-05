@@ -43,11 +43,11 @@ export default function Home({featuredposts,data}) {
       <SearchInput filterProperties={filterProperties} properties={filter}/>
       <PopularHeader text={'property listings'}/>
       {filter === [] ? <p>oops! we dont have what you are looking for </p> : <PropertyList properties={filter}/>}
-      <SeeAll link={'/properties'} text={'see available propeties'}/>
+      <SeeAll link={'/Properties'} text={'see available propeties'}/>
       <BlogShowCard />
       <PopularHeader text={'latest from blog'}/>
       <BlogSection posts={featuredposts ? featuredposts : ''}/>
-      <SeeAll link={'/blog'} text={'view more posts'}/>
+      <SeeAll link={'/Blog'} text={'view more posts'}/>
     </main>
   )
  

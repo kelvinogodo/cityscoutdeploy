@@ -20,7 +20,7 @@ const Contact = () => {
             'your message has been sent successfully, we will get in touch soon ',
             'success'
           )
-          form.current.innerText = ' '
+          form.current.value = ''
       }, (error) => {
           console.log(error.text);
           Swal.fire(

@@ -14,22 +14,22 @@ const Menu = ({links,showMenu}) => {
       <AiOutlineHome />
     )
     break;
-    case 'about' :
+    case 'About' :
     return(
       <VscQuestion />
     )
     break;
-    case 'service' :
+    case 'Service' :
     return(
       <GoSettings />
     )
     break;
-    case 'contact' :
+    case 'Contact' :
     return(
       <MdOutlineContactPage />
     )
     break;
-    case 'blog' :
+    case 'Blog' :
     return(
       <FaBlog />
     )
