@@ -49,7 +49,6 @@ export const getStaticProps = async (context)=>{
   catch(error){
     console.log(error)
   };
-  
 }
 export const getStaticPaths = async()=>{
   const req = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts`)
