@@ -55,8 +55,8 @@ export default function Home({featuredposts,data}) {
 export const getStaticProps = async ()=>{
   const [req,getProperties] = await Promise.all( 
     [
-      fetch('/api/posts'),
-      fetch('/api/properties')
+      fetch('https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/posts'),
+      fetch('https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/properties')
     ]);
   const [featuredposts, data] = await Promise.all([req.json(),getProperties.json()])
   return{

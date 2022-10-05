@@ -53,7 +53,7 @@ const Properties = ({property}) => {
 }
 export const getStaticProps = async (context)=>{
     const id = context.params.id
-    const req = await fetch(`/api/properties/${id}`)
+    const req = await fetch(`https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/api/properties/${id}`)
     const property = await req.json()
     return{
       props:{
@@ -62,7 +62,7 @@ export const getStaticProps = async (context)=>{
     }
   }
   export const getStaticPaths = async()=>{
-    const req = await fetch(`/api/properties`)
+    const req = await fetch(`https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/api/properties`)
     const properties = await req.json()
     const ids = properties.map(post =>(post._id))
     const paths = ids.map(id =>({params : {id : id.toString()}}))
