@@ -1,5 +1,4 @@
 import {useState} from 'react'
-// config.js
 const app = {
   API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
 };
