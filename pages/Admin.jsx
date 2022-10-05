@@ -29,7 +29,9 @@ const Admin = () => {
     {
       method: 'POST',
       headers: {
-        'content-Type' : 'application/json'
+         Accept: "application/json; charset=UTF-8",
+        'Content-Type': 'application/json',
+        'User-Agent': '*',
       },
       body: JSON.stringify({
         name:adminData.name,
@@ -59,7 +61,9 @@ const Admin = () => {
       {
         method:'POST',
         headers :{
-            'content-Type':'application/json'
+           Accept: "application/json; charset=UTF-8",
+          'Content-Type': 'application/json',
+          'User-Agent': '*',
         },
         body: JSON.stringify(
           {
