@@ -5,5 +5,6 @@ export default async function handler(req, res) {
     console.log('FETCHING DATA')
     const posts = await Post.find()
     console.log('posts successfully fetched')
+    console.log(posts)
     res.status(200).json(posts)
 }
