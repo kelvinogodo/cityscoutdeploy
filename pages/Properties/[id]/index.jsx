@@ -67,7 +67,15 @@ export const getBaseApiUrl = () => {
 
 export const getStaticProps = async (context)=>{
     const id = context.params.id
-    const req = await fetch(`${getBaseApiUrl()}/api/properties/${id}`)
+    const req = await fetch(`${getBaseApiUrl()}/api/properties/${id}`,
+    {
+      method:'GET',
+      headers:{
+        Accept: "application/json; charset=UTF-8",
+        'Content-Type': 'application/json',
+        'User-Agent': '*',
+      }
+    })
     const property = await req.json()
     return{
       props:{
@@ -76,7 +84,15 @@ export const getStaticProps = async (context)=>{
     }
   }
   export const getStaticPaths = async()=>{
-    const req = await fetch(`${getBaseApiUrl()}/api/properties`)
+    const req = await fetch(`${getBaseApiUrl()}/api/properties`,
+    {
+      method:'GET',
+      headers:{
+        Accept: "application/json; charset=UTF-8",
+        'Content-Type': 'application/json',
+        'User-Agent': '*',
+      }
+    })
     const properties = await req.json()
     const ids = Array.isArray(properties) ? properties.map(post =>(post._id)) : []
     const paths = ids.map(id =>({params : {id : id.toString()}}))
