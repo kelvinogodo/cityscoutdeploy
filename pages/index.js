@@ -52,11 +52,24 @@ export default function Home({featuredposts,data}) {
   )
  
 }
+// config.js
+const app = {
+  API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
+};
+
+export const getBaseApiUrl = () => {
+  const url = process.browser ? "/api" :app.API_URL
+  if (process.browser) {
+    return "/api";
+  }
+// see `app` defined in my previous reply
+  return url;
+};
 export const getStaticProps = async ()=>{
   const [req,getProperties] = await Promise.all( 
     [
-      fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/posts'),
-      fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/properties')
+      fetch(`${getBaseApiUrl()}/posts`),
+      fetch(`${getBaseApiUrl()}/properties`)
     ]);
   const [featuredposts, data] = await Promise.all([req.json(),getProperties.json()])
   return{

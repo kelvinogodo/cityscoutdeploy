@@ -51,9 +51,23 @@ const Properties = ({property}) => {
     </main>
   )
 }
+// config.js
+const app = {
+  API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
+};
+
+export const getBaseApiUrl = () => {
+  const url = process.browser ? "/api" :app.API_URL
+  if (process.browser) {
+    return "/api";
+  }
+// see `app` defined in my previous reply
+  return url;
+};
+
 export const getStaticProps = async (context)=>{
     const id = context.params.id
-    const req = await fetch(`https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/properties/${id}`)
+    const req = await fetch(`${getBaseApiUrl()}/api/properties/${id}`)
     const property = await req.json()
     return{
       props:{

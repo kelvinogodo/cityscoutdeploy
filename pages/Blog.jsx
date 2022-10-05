@@ -110,8 +110,21 @@ const Blog = ({featuredposts}) => {
     </main>
   )
 }
+// config.js
+const app = {
+    API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
+  };
+  
+  export const getBaseApiUrl = () => {
+    const url = process.browser ? "/api" :app.API_URL
+    if (process.browser) {
+      return "/api";
+    }
+  // see `app` defined in my previous reply
+    return url;
+  };
 export const getStaticProps = async ()=>{
-    const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/posts')
+    const req = await fetch(`${getBaseApiUrl()}/api/posts`)
     const featuredposts = await req.json()
     return{
         props:{

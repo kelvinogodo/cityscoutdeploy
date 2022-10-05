@@ -1,8 +1,22 @@
 import {useState} from 'react'
+// config.js
+const app = {
+  API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
+};
+
+export const getBaseApiUrl = () => {
+  const url = process.browser ? "/api" :app.API_URL
+  if (process.browser) {
+    return "/api";
+  }
+// see `app` defined in my previous reply
+  return url;
+};
 const Admin = () => {
   const [password, setPassword] = useState()
   const [email, setEmail] = useState()
   const [name, setName] = useState()
+  
   const createAdmin = async (e)=>{
     e.preventDefault()
     const adminData = {
@@ -10,7 +24,7 @@ const Admin = () => {
       email:email,
       password:password
     }
-    const request = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/createAdmin',
+    const request = await fetch(`${getBaseApiUrl()}/api/createAdmin`,
     {
       method: 'POST',
       headers: {
@@ -35,7 +49,7 @@ const Admin = () => {
         email:email,
         password:password
       }
-      const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/login',
+      const req = await fetch(`${getBaseApiUrl()}/api/login`,
       {
         method:'POST',
         headers :{

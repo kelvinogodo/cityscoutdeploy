@@ -11,6 +11,19 @@ import {RiFileEditLine} from 'react-icons/ri'
 import TipTap from './TipTap'
 import parser from 'html-react-parser'
 import Swal from 'sweetalert2'
+// config.js
+const app = {
+  API_URL: process.env.API_URL ? process.env.API_URL : "https://localhost:3000",
+};
+
+export const getBaseApiUrl = () => {
+  const url = process.browser ? "/api" :app.API_URL
+  if (process.browser) {
+    return "/api";
+  }
+// see `app` defined in my previous reply
+  return url;
+};
 const Overview = ({showOverview,showCreateSection,showEditSection,showCreatePropertySection,showEditPropertySection}) => {
 
   // posts and properties state managers 
@@ -18,8 +31,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [properties,setProperties]= useState() 
   const fetchData = async ()=>{
     const [postRequest, propertyRequest] = await Promise.all ([
-     fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/posts'),
-     fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/properties')
+     fetch(`${getBaseApiUrl()}/api/posts`),
+     fetch(`${getBaseApiUrl()}/api/properties`)
     ])
     const [posts,propertiesArray] = await Promise.all ([
      postRequest.json(),
@@ -57,7 +70,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/createPost',
+    const req = await fetch(`${getBaseApiUrl()}/api/createPost`,
     {
       method:'POST',
       headers:{
@@ -106,7 +119,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       backViewImage:`${backViewImage}`,
       type:propertyType,
     }
-    const request = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/createProperty',
+    const request = await fetch(`${getBaseApiUrl()}/api/createProperty`,
     {
       method:'POST',
       headers:{
@@ -136,7 +149,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete post function 
   const deletePost = async (id)=>{
-    const deleteRequest = await fetch(`https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/deletePost`,
+    const deleteRequest = await fetch(`${getBaseApiUrl()}/api/deletePost`,
     {
       method:'POST',
       headers:{
@@ -166,7 +179,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete property function 
   const deleteProperty = async (id)=>{
-    const deleteRequest = await fetch(`https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/deleteProperty`,
+    const deleteRequest = await fetch(`${getBaseApiUrl()}/api/deleteProperty`,
     {
       method:'POST',
       headers:{
@@ -217,7 +230,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const editProperty = async (e)=>{
     e.preventDefault()
-    const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/editProperty',
+    const req = await fetch(`${getBaseApiUrl()}/api/editProperty`,
     {
       method: 'POST',
       headers :{
@@ -264,7 +277,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     console.log(editedPost)
 
-    const editRequest = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/editPost',
+    const editRequest = await fetch(`${getBaseApiUrl()}/api/editPost`,
     {
       method:'POST',
       headers:{
@@ -321,7 +334,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/upload',
+    const req = await fetch(`${getBaseApiUrl()}/api/upload`,
     {
       method:'POST',
       body:formData
