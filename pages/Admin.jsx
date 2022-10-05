@@ -10,7 +10,7 @@ const Admin = () => {
       email:email,
       password:password
     }
-    const request = await fetch('https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/api/createAdmin',
+    const request = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/createAdmin',
     {
       method: 'POST',
       headers: {
@@ -35,7 +35,7 @@ const Admin = () => {
         email:email,
         password:password
       }
-      const req = await fetch('https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/api/login',
+      const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/login',
       {
         method:'POST',
         headers :{

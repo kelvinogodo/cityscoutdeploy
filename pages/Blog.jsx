@@ -111,7 +111,7 @@ const Blog = ({featuredposts}) => {
   )
 }
 export const getStaticProps = async ()=>{
-    const req = await fetch('https://app.cyclic.sh/#/deploy/kelvinogodo/cityscoutdeploy/api/posts')
+    const req = await fetch('https://cityscoutdeploy-m54qae4jb-kelvinogodo.vercel.app/api/posts')
     const featuredposts = await req.json()
     return{
         props:{
