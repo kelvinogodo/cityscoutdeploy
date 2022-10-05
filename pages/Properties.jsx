@@ -111,7 +111,15 @@ export const getBaseApiUrl = () => {
 };
 
 export const getStaticProps = async () =>{
-  const req = await fetch(`${getBaseApiUrl()}/api/properties`)
+  const req = await fetch(`${getBaseApiUrl()}/api/properties`,
+  {
+    method:'GET',
+    headers:{
+      Accept: "application/json; charset=UTF-8",
+      'Content-Type': 'application/json',
+      'User-Agent': '*',
+    }
+  })
   const properties = await req.json()
   return{
     props:{

@@ -68,8 +68,24 @@ export const getBaseApiUrl = () => {
 export const getStaticProps = async ()=>{
   const [req,getProperties] = await Promise.all( 
     [
-      fetch(`${getBaseApiUrl()}/posts`),
-      fetch(`${getBaseApiUrl()}/properties`)
+      fetch(`${getBaseApiUrl()}/posts`,
+      {
+        method:'GET',
+        headers:{
+          Accept: "application/json; charset=UTF-8",
+          'Content-Type': 'application/json',
+          'User-Agent': '*',
+        }
+      }),
+      fetch(`${getBaseApiUrl()}/properties`,
+      {
+        method:'GET',
+        headers:{
+          Accept: "application/json; charset=UTF-8",
+          'Content-Type': 'application/json',
+          'User-Agent': '*',
+        }
+      })
     ]);
   const [featuredposts, data] = await Promise.all([req.json(),getProperties.json()])
   return{

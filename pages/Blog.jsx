@@ -124,7 +124,15 @@ const app = {
     return url;
   };
 export const getStaticProps = async ()=>{
-    const req = await fetch(`${getBaseApiUrl()}/api/posts`)
+    const req = await fetch(`${getBaseApiUrl()}/api/posts`,
+    {
+      method:'GET',
+      headers:{
+        Accept: "application/json; charset=UTF-8",
+        'Content-Type': 'application/json',
+        'User-Agent': '*',
+      }
+    })
     const featuredposts = await req.json()
     return{
         props:{
