@@ -88,7 +88,7 @@ const [searchKeywords, setSearchKeywords] = useState()
          <span className="line"></span> <h2>latest properties</h2>
         </span>
         <div className='property-list blog-section'>
-          {filter && filter.map(item =>(
+          {Array.isArray(filter) && filter.map(item =>(
             <Card key={item._id} item={item} addedClass={'blog-card'}/>
           ))}
         </div>

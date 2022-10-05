@@ -28,7 +28,7 @@ const Blog = ({featuredposts}) => {
           modules={[Autoplay, Pagination]}
           className="mySwiper blog-swiper"
           >
-            { featuredposts ? featuredposts.slice(featuredposts.length-5,featuredposts.length).reverse().map(featured => (
+            { Array.isArray(featuredposts) ? featuredposts.slice(featuredposts.length-5,featuredposts.length).reverse().map(featured => (
                 <SwiperSlide className='blog-slide' key={featured._id}>
                 <div className="featured-post-text">
                     <h1>{featured.title}</h1>
@@ -56,7 +56,7 @@ const Blog = ({featuredposts}) => {
                     <h2>related posts</h2>
                 </span>
                 {
-                    featuredposts ? featuredposts.slice(featuredposts.length-2,featuredposts.length-1).reverse().map(related => (
+                    Array.isArray(featuredposts) ? featuredposts.slice(featuredposts.length-2,featuredposts.length-1).reverse().map(related => (
                     <div key={related._id} className="left-container-post-card" style={{position:'relative'}}>
                     <Image src={`/${related.image}`} alt="related post image" className="blog-img" layout="fill" placeholder="blur" blurDataURL={`/${related.image}`}/>
                     <div className="blog-card-text-container">
@@ -73,7 +73,7 @@ const Blog = ({featuredposts}) => {
                 }
             </div>
             <div className="right-container">
-            { featuredposts ? featuredposts.slice(featuredposts.length - 4,featuredposts.length-2).map(featured => (
+            { Array.isArray(featuredposts) ? featuredposts.slice(featuredposts.length - 4,featuredposts.length-2).map(featured => (
                 <div key={featured._id} className="right-blog-card" style={{position:'relative'}}>
                     <Image src={`/${featured.image}`} alt="realted post image" className="blog-img" layout="fill" placeholder="blur" blurDataURL={`/${featured.image}`}/>
                     <div className="blog-card-text-container">
@@ -91,7 +91,7 @@ const Blog = ({featuredposts}) => {
         </section>
         <PopularHeader text={'blog posts'}/>
         <section className='property-list blog-section blog-list' id='blog-posts'>
-            { featuredposts && featuredposts.map(
+            { Array.isArray(featuredposts) && featuredposts.map(
             item =>  <BlogCard key={item._id} item ={item}/>
             )}
         </section>
