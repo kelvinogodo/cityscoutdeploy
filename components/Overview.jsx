@@ -18,8 +18,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [properties,setProperties]= useState() 
   const fetchData = async ()=>{
     const [postRequest, propertyRequest] = await Promise.all ([
-     fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts'),
-     fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/properties')
+     fetch('/api/posts'),
+     fetch('/api/properties')
     ])
     const [posts,propertiesArray] = await Promise.all ([
      postRequest.json(),
@@ -57,7 +57,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/createPost',
+    const req = await fetch('/api/createPost',
     {
       method:'POST',
       headers:{
@@ -106,7 +106,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       backViewImage:`${backViewImage}`,
       type:propertyType,
     }
-    const request = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/createProperty',
+    const request = await fetch('/api/createProperty',
     {
       method:'POST',
       headers:{
@@ -136,7 +136,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete post function 
   const deletePost = async (id)=>{
-    const deleteRequest = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/deletePost`,
+    const deleteRequest = await fetch(`/api/deletePost`,
     {
       method:'POST',
       headers:{
@@ -166,7 +166,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete property function 
   const deleteProperty = async (id)=>{
-    const deleteRequest = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/deleteProperty`,
+    const deleteRequest = await fetch(`/api/deleteProperty`,
     {
       method:'POST',
       headers:{
@@ -217,7 +217,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const editProperty = async (e)=>{
     e.preventDefault()
-    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/editProperty',
+    const req = await fetch('/api/editProperty',
     {
       method: 'POST',
       headers :{
@@ -264,7 +264,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     console.log(editedPost)
 
-    const editRequest = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/editPost',
+    const editRequest = await fetch('/api/editPost',
     {
       method:'POST',
       headers:{
@@ -321,7 +321,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/upload',
+    const req = await fetch('/api/upload',
     {
       method:'POST',
       body:formData
@@ -518,7 +518,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           </div>
           <div className="overview ProseMirror">
             {postTitle && <h1>{postTitle}</h1>}
-            { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeholder='blur'/> }
+            { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeHolder='blur'/> }
             {postBody && <div className="post-body">
               {parser(postBody)}
             </div>}
@@ -578,9 +578,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             {propertyDescription && <p>{propertyDescription}</p>}
             {propertyLocation && <p>{propertyLocation}</p>}
             {propertyPrice && <p>{propertyPrice}</p>}
-            { frontViewImage && <Image height={300} width={400} alt='post image preview' src={`/${frontViewImage}`} blurDataURL={`/${frontViewImage}`} placeholder='blur'/> }
-            { sideViewImage && <Image height={300} width={400} alt='post image preview' src={`/${sideViewImage}`} blurDataURL={`/${sideViewImage}`} placeholder='blur'/> }
-            { backViewImage && <Image height={300} width={400} alt='post image preview' src={`/${backViewImage}`} blurDataURL={`/${backViewImage}`} placeholder='blur'/> }
+            { frontViewImage && <Image height={300} width={400} alt='post image preview' src={`/${frontViewImage}`} blurDataURL={`/${frontViewImage}`} placeHolder='blur'/> }
+            { sideViewImage && <Image height={300} width={400} alt='post image preview' src={`/${sideViewImage}`} blurDataURL={`/${sideViewImage}`} placeHolder='blur'/> }
+            { backViewImage && <Image height={300} width={400} alt='post image preview' src={`/${backViewImage}`} blurDataURL={`/${backViewImage}`} placeHolder='blur'/> }
           </div>
           </section>
           }

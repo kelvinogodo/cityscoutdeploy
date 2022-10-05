@@ -111,7 +111,7 @@ const Blog = ({featuredposts}) => {
   )
 }
 export const getStaticProps = async ()=>{
-    const req = await fetch('https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts')
+    const req = await fetch('/api/posts')
     const featuredposts = await req.json()
     return{
         props:{
