@@ -49,6 +49,13 @@ const Admin = () => {
       )
       window.location.href= '/Dashboard' 
     }
+    else{
+      Swal.fire(
+        'error',
+        `${res}`,
+        'error'
+      )
+    }
   }
 
   const login = async  (e)=>{
