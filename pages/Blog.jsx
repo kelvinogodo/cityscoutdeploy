@@ -11,7 +11,7 @@ import Parser from 'html-react-parser'
 import { Autoplay, Pagination} from "swiper";
 
 const Blog = ({featuredposts}) => {
-    const [featuredpostArray,setFeaturedpostArray] = useState(featuredposts.filter(post =>(post.category == 'featured' && post)))
+    // const [featuredpostArray,setFeaturedpostArray] = useState(featuredposts.filter(post =>(post.category == 'featured' && post)))
   return (
     <main className='blog-page'>
         <section className="featured-post-container">
@@ -91,7 +91,7 @@ const Blog = ({featuredposts}) => {
         </section>
         <PopularHeader text={'blog posts'}/>
         <section className='property-list blog-section blog-list' id='blog-posts'>
-            {featuredposts.map(
+            { featuredposts && featuredposts.map(
             item =>  <BlogCard key={item._id} item ={item}/>
             )}
         </section>

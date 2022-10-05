@@ -9,7 +9,7 @@ import {BsSearch} from 'react-icons/bs'
 import Card from '../components/Card'
 import { useState } from 'react'
 const Properties = ({properties}) => {
-  const [filter,setFilter]= useState(properties)
+  const [filter,setFilter]= useState(Array.isArray(properties) ? properties : [] )
     
       const filterProperties = (title,keyword)=>{
         switch (title) {
@@ -88,7 +88,7 @@ const [searchKeywords, setSearchKeywords] = useState()
          <span className="line"></span> <h2>latest properties</h2>
         </span>
         <div className='property-list blog-section'>
-          {filter.map(item =>(
+          {filter && filter.map(item =>(
             <Card key={item._id} item={item} addedClass={'blog-card'}/>
           ))}
         </div>
