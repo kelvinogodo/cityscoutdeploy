@@ -33,13 +33,13 @@ const SearchInput = ({inputClass,filterProperties,properties}) => {
         setListTitle(title)
         switch (title) {
             case 'location':
-                setSortList(properties.map(property =>(property.location)))
+                setSortList(Array.isArray(properties) && properties.map(property =>(property.location)))
                 break;
             case 'price':
-                setSortList(properties.map(property =>(property.price)))
+                setSortList(Array.isArray(properties) && properties.map(property =>(property.price)))
                 break;
             case 'description':
-                setSortList(properties.map(property =>(property.description)))
+                setSortList(Array.isArray(properties) && properties.map(property =>(property.description)))
                 break;
         
             default:setSortList(properties)

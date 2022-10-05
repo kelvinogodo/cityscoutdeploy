@@ -23,7 +23,7 @@ const MobilePopularList = ({properties}) => {
         className="mySwiper mobile-popular-swiper"
       >  
         {Array.isArray(properties) && properties.slice(properties.length - 4, properties.length).reverse().map((item)=>(
-        <SwiperSlide className='mobile-popular-swiper-slide' key={item.id}>
+        <SwiperSlide className='mobile-popular-swiper-slide' key={item._id}>
           <AnimatePresence>
             <PopularCard  item={item} initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='property-card'/>
           </AnimatePresence>
