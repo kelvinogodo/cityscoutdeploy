@@ -22,7 +22,7 @@ const MobilePopularList = ({properties}) => {
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper mobile-popular-swiper"
       >  
-        {properties.slice(properties.length - 4, properties.length).reverse().map((item)=>(
+        {Array.isArray(properties) && properties.slice(properties.length - 4, properties.length).reverse().map((item)=>(
         <SwiperSlide className='mobile-popular-swiper-slide' key={item.id}>
           <AnimatePresence>
             <PopularCard  item={item} initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='property-card'/>
