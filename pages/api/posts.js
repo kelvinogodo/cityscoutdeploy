@@ -1,5 +1,5 @@
-import Post from '../models/postModel'
-import {connectMongo} from '../utils/connectMongo'
+import Post from '../../models/postModel'
+import {connectMongo} from '../../utils/connectMongo'
 export default async function handler(req, res) {
     await connectMongo()
     console.log('FETCHING DATA')
