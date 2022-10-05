@@ -39,7 +39,7 @@ export const getStaticProps = async (context)=>{
   try{
     const req = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts/${id}`,
     {
-      method:GET,
+      method:'GET',
       headers:{
         Accept: "application/json; charset=UTF-8",
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export const getStaticProps = async (context)=>{
 export const getStaticPaths = async()=>{
   const req = await fetch(`https://vercel.com/kelvinogodo/cityscoutdeploy/4DXGPTsXzc1av1cVZ3EKt3VMmL1t/api/posts`,
   {
-    method:GET,
+    method:'GET',
     headers:{
       Accept: "application/json; charset=UTF-8",
       'Content-Type': 'application/json',
