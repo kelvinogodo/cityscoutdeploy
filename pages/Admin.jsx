@@ -92,13 +92,13 @@ const Admin = () => {
           <h2>welcome admin</h2>
           <input type="text" required onChange={(e)=>{
             setName(e.target.value)
-          }} />
+          }} placeholder='enter your name'/>
           <input type="email" className="login-input" required onChange={(e)=>{
             setEmail(e.target.value)
-          }}/>
+          }} placeholder='enter your email'/>
           <input type="password" className="login-input" required onChange={(e)=>{
             setPassword(e.target.value)
-          }}/>
+          }} placeholder='enter your password'/>
           <input type="submit" value="create account" className='login-submit-btn'/>
         </form>
 
@@ -106,10 +106,10 @@ const Admin = () => {
           <h2>welcome admin</h2>
           <input type="email" required onChange={(e)=>{
             setEmail(e.target.value)
-          }} />
+          }} placeholder='enter your email'/>
           <input type="password" required onChange={(e)=>{
             setPassword(e.target.value)
-          }} />
+          }} placeholder='enter your password'/>
           <input type="submit" value="login" className='login-submit-btn'/>
         </form>
     </section>
