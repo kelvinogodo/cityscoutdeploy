@@ -57,7 +57,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [postAuthor,setPostAuthor] = useState('ogodo dominic')
   const [postImage, setPostImage] = useState()
   const [postDate,setPostDate] = useState()
-  const [postCategory,setPostCategory] = useState()
+  const [postCategory,setPostCategory] = useState('normal')
 
   const createPost = async ()=>{
     const date = new Date().toLocaleDateString()
