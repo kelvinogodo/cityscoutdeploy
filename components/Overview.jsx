@@ -69,7 +69,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     {
       method:'POST',
       headers:{
-        'content-Type':'multipart/form-data'
+        'content-Type':'multipart/form-data',
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true 
       },
       formData
     }

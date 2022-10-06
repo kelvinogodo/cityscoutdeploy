@@ -22,7 +22,7 @@ apiRoute.use(upload.single('theFiles'));
 // apiRoute.post((req, res) => {
 //   res.status(200).json({ data: 'success' });
 // });
-
+res.json({data:'ok'})
 
 export default apiRoute;
 
