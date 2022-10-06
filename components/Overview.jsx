@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Card from './Card'
 import BlogCard from './BlogCard'
 import {RiDeleteBin2Line} from 'react-icons/ri'
+import axios from 'axios'
 import {RiFileEditLine} from 'react-icons/ri'
 import TipTap from './TipTap'
 import parser from 'html-react-parser'
@@ -65,18 +66,14 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch(`${getBaseApiUrl()}/upload`,
-    {
-      method:'POST',
-      headers:{
+    const req = await  axios(`${getBaseApiUrl()}/upload`,formData,
+      {headers:{
         'content-Type':'multipart/form-data',
-      },
-      body:formData
-    }
+      }}
     )
     console.log(req)
   }
-  
+
   const createPost = async ()=>{
     const date = new Date().toLocaleDateString()
     setPostDate(date)
