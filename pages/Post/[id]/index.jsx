@@ -12,7 +12,7 @@ const Posts = ({post}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="blog-header">
-        <Link href='/blog'>blog</Link>
+        <Link href='/Blog'>blog</Link>
         <span>/</span>
         <Link href='/'> home</Link>
       </section>
