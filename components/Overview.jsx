@@ -71,7 +71,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       headers:{
         'Content-Type': 'multipart/form-data',
       },
-      body:formData
+      formData
     }
     )
     const res = req.json()
