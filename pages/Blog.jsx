@@ -37,7 +37,7 @@ const Blog = ({featuredposts}) => {
                             Parser(featured.body.slice(0,200))
                         }
                     </div>
-                    <Link href='/post/[id]' as={`/post/${featured.title}`}>
+                    <Link href='/Post/[id]' as={`/Post/${featured.title}`}>
                         read more 
                     </Link>
                 </div>
@@ -66,7 +66,7 @@ const Blog = ({featuredposts}) => {
                                 Parser(related.body.slice(0,80))
                             }
                         </div>
-                        <Link href='/post/[id]' as={`/post/${related.title}`}> read more</Link>
+                        <Link href='/Post/[id]' as={`/Post/${related.title}`}> read more</Link>
                     </div>
                 </div>
                 )) : ''
@@ -83,7 +83,7 @@ const Blog = ({featuredposts}) => {
                                 Parser(featured.body.slice(0,80))
                             }
                         </div>
-                        <Link href='/post/[id]' as={`/post/${featured.title}`}> read more</Link>
+                        <Link href='/Post/[id]' as={`/Post/${featured.title}`}> read more</Link>
                     </div>
                 </div>
              )) : ''}
