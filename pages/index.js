@@ -68,7 +68,7 @@ export const getBaseApiUrl = () => {
 export const getStaticProps = async ()=>{
   const [req,getProperties] = await Promise.all( 
     [
-      fetch(`${getBaseApiUrl()}/posts`,
+      fetch(`${getBaseApiUrl()}/api/posts`,
       {
         method:'GET',
         headers:{
@@ -77,7 +77,7 @@ export const getStaticProps = async ()=>{
           'User-Agent': '*',
         }
       }),
-      fetch(`${getBaseApiUrl()}/properties`,
+      fetch(`${getBaseApiUrl()}/api/properties`,
       {
         method:'GET',
         headers:{
