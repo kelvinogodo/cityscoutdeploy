@@ -73,11 +73,10 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
         "Access-Control-Allow-Origin" : "*", 
         "Access-Control-Allow-Credentials" : true 
       },
-      formData
+      body:formData
     }
     )
-    const res = req.data
-    console.log(res)
+    console.log(req)
   }
   const createPost = async ()=>{
     const date = new Date().toLocaleDateString()
