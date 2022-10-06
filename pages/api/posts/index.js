@@ -4,7 +4,6 @@ export default async function handler(req, res) {
     await connectMongo()
     console.log('FETCHING DATA')
     const posts = await Post.find() 
-    if(posts !== []){ res.status(200).json(posts) }
+    if(posts !== []){ res.status(200).json(posts)}
     else{ res.status(200).json([])}
-    console.log('posts successfully fetched')
 }
