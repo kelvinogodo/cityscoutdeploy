@@ -56,7 +56,7 @@ const Card = ({item,addedClass}) => {
               <div className="body-card">
                 <span className='title'><ImPriceTags /> </span><span className='key'>{item.type && item.type}</span>
               </div>
-              <Link href='/properties/[id]' as={`/properties/${item._id}`}  className='read-more-btn'>view more</Link>
+              <Link href='/Properties/[id]' as={`/Properties/${item._id}`}  className='read-more-btn'>view more</Link>
             </div> 
         </motion.div>
   )
