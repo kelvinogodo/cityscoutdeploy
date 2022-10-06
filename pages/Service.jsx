@@ -20,14 +20,14 @@ const Service = () => {
           <GiProgression />
           <h2>property brokerage</h2>
           <p>
-            acquiring the right property can be daunting. our goal is to take that stress off your shoulder and help you find the best property which meets your investment target
+            Acquiring the right property can be daunting. our goal is to take that stress off your shoulder and help you find the best property which meets your investment target
           </p>
         </div>
         <div className="service-card">
           <FaCity />
           <h2>real estate development</h2>
           <p>
-            property development becomes easier with professionals. we have a team of architects, surveyors, and engineers who will drive qaulity development of your lands and buildings for higher economic values
+            Property development becomes easier with professionals. we have a team of architects, surveyors, and engineers who will drive qaulity development of your lands and buildings for higher economic values
           </p>
         </div>
       </section>
