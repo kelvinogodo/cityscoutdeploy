@@ -48,7 +48,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
         console.log('welcome admin')
     }
     else{
-        window.location.href= '/admin'
+        window.location.href= '/Admin'
     }
   fetchData()
   },[])
