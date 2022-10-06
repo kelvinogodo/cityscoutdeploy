@@ -75,7 +75,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     console.log(res)
   }
   const createPost = async ()=>{
-    await uploadFile()
     const date = new Date().toLocaleDateString()
     setPostDate(date)
     const newPost = {
@@ -508,15 +507,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
                 setPostAuthor(author)
               }} required
             />
-            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
-               onChange={(e)=>{
-                setPostImage(e.target.files[0].name.toString())
-                const image = e.target.files[0]
-                setUploadImage(image)
-                console.log(image)
-              }}
-              required
-            />
             <span className='create-category'>choose category</span>
             <div className="category-btn-container"> 
             {
@@ -530,6 +520,21 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             }
             </div>
             <input type="submit" value="create post" className='create-btn'/>
+          </form>
+          <form onSubmit={
+            (e)=>{e.preventDefault()
+              uploadFile()
+          }} className="create-post-form">
+            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
+               onChange={(e)=>{
+                setPostImage(e.target.files[0].name.toString())
+                const image = e.target.files[0]
+                setUploadImage(image)
+                console.log(image)
+              }}
+              required
+            />
+            <input type="submit" value='upload' className='create-btn'/>
           </form>
           </div>
           <div className="overview ProseMirror">
