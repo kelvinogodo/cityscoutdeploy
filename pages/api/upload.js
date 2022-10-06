@@ -24,7 +24,8 @@ apiRoute.use(upload.single('theFiles'));
 // });
 res.json({data:'ok'})
 }catch(err){
-  res.json(err)
+  res.json(err.message)
+  console.log(err.message)
 }
 export default apiRoute;
 
