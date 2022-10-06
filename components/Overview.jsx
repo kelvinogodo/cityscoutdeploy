@@ -76,7 +76,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       formData
     }
     )
-    const res = req
+    const res = req.data()
     console.log(res)
   }
   const createPost = async ()=>{
