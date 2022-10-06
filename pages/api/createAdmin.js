@@ -8,9 +8,9 @@ export default async function  login(req, res){
           email:req.body.email,
           name:req.body.name,
         })
-        return res.json({ status: 200 })
+        res.json({ status: 200 })
       } catch (error) {
         console.log(error)
-        return res.json({ status: 'error', error: 'duplicate email' })
+       res.json({ status: 'error', error: 'duplicate email' })
       }
 }

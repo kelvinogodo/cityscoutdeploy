@@ -18,8 +18,7 @@ const Admin = () => {
   const [email, setEmail] = useState()
   const [name, setName] = useState()
   
-  const createAdmin = async (e)=>{
-    e.preventDefault()
+  const createAdmin = async ()=>{
     const adminData = {
       name:name,
       email:email,
@@ -29,9 +28,7 @@ const Admin = () => {
     {
       method: 'POST',
       headers: {
-         Accept: "application/json; charset=UTF-8",
         'Content-Type': 'application/json',
-        'User-Agent': '*',
       },
       body: JSON.stringify({
         name:adminData.name,
@@ -58,8 +55,7 @@ const Admin = () => {
     }
   }
 
-  const login = async  (e)=>{
-      e.preventDefault()
+  const login = async  ()=>{
       const loginData = {
         email:email,
         password:password
@@ -68,9 +64,7 @@ const Admin = () => {
       {
         method:'POST',
         headers :{
-           Accept: "application/json; charset=UTF-8",
           'Content-Type': 'application/json',
-          'User-Agent': '*',
         },
         body: JSON.stringify(
           {
@@ -95,7 +89,9 @@ const Admin = () => {
   }
   return (
     <section className='login-form-container'>
-        <form className="login-form" onSubmit={()=>{createAdmin()}}>
+        <form className="login-form" onSubmit={(e)=>{
+          e.preventDefault()
+          createAdmin()}}>
           <h2>welcome admin</h2>
           <input type="text" required onChange={(e)=>{
             setName(e.target.value)
@@ -109,7 +105,9 @@ const Admin = () => {
           <input type="submit" value="create account" className='login-submit-btn'/>
         </form>
 
-        <form  onSubmit={()=>{login()}} className='login-form'>
+        <form  onSubmit={(e)=>{
+          e.preventDefault()
+          login()}} className='login-form'>
           <h2>welcome admin</h2>
           <input type="email" required onChange={(e)=>{
             setEmail(e.target.value)
