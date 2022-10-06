@@ -68,6 +68,10 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const req = await fetch(`${getBaseApiUrl()}/upload`,
     {
       method:'POST',
+      headers:{
+        'Content-Type': 'multipart/form-data',
+        'User-Agent': '*',
+      },
       body:formData
     }
     )
