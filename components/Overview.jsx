@@ -31,8 +31,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [properties,setProperties]= useState() 
   const fetchData = async ()=>{
     const [postRequest, propertyRequest] = await Promise.all ([
-     fetch(`${getBaseApiUrl()}/api/posts`),
-     fetch(`${getBaseApiUrl()}/api/properties`)
+     fetch(`${getBaseApiUrl()}/posts`),
+     fetch(`${getBaseApiUrl()}/properties`)
     ])
     const [posts,propertiesArray] = await Promise.all ([
      postRequest.json(),
@@ -70,7 +70,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await fetch(`${getBaseApiUrl()}/api/createPost`,
+    const req = await fetch(`${getBaseApiUrl()}/createPost`,
     {
       method:'POST',
       headers:{
@@ -119,7 +119,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       backViewImage:`${backViewImage}`,
       type:propertyType,
     }
-    const request = await fetch(`${getBaseApiUrl()}/api/createProperty`,
+    const request = await fetch(`${getBaseApiUrl()}/createProperty`,
     {
       method:'POST',
       headers:{
@@ -149,7 +149,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete post function 
   const deletePost = async (id)=>{
-    const deleteRequest = await fetch(`${getBaseApiUrl()}/api/deletePost`,
+    const deleteRequest = await fetch(`${getBaseApiUrl()}/deletePost`,
     {
       method:'POST',
       headers:{
@@ -179,7 +179,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   // delete property function 
   const deleteProperty = async (id)=>{
-    const deleteRequest = await fetch(`${getBaseApiUrl()}/api/deleteProperty`,
+    const deleteRequest = await fetch(`${getBaseApiUrl()}/deleteProperty`,
     {
       method:'POST',
       headers:{
@@ -230,7 +230,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const editProperty = async (e)=>{
     e.preventDefault()
-    const req = await fetch(`${getBaseApiUrl()}/api/editProperty`,
+    const req = await fetch(`${getBaseApiUrl()}/editProperty`,
     {
       method: 'POST',
       headers :{
@@ -277,7 +277,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     console.log(editedPost)
 
-    const editRequest = await fetch(`${getBaseApiUrl()}/api/editPost`,
+    const editRequest = await fetch(`${getBaseApiUrl()}/editPost`,
     {
       method:'POST',
       headers:{
@@ -334,7 +334,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch(`${getBaseApiUrl()}/api/upload`,
+    const req = await fetch(`${getBaseApiUrl()}/upload`,
     {
       method:'POST',
       body:formData
@@ -350,7 +350,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       formData.append('theFiles',file)
     } )
     console.log(uploadImage)
-    const req = await fetch('/uploadPropertyImages',
+    const req = await fetch(`${getBaseApiUrl()}/uploadPropertyImages`,
     {
       method:'POST',
       body:formData
