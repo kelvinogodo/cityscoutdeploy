@@ -70,14 +70,13 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       method:'POST',
       headers:{
         'content-Type':'multipart/form-data',
-        "Access-Control-Allow-Origin" : "*", 
-        "Access-Control-Allow-Credentials" : true 
       },
       body:formData
     }
     )
     console.log(req)
   }
+  
   const createPost = async ()=>{
     const date = new Date().toLocaleDateString()
     setPostDate(date)
