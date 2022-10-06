@@ -99,6 +99,7 @@ export const getStaticProps = async (context)=>{
     return{
       paths,
       fallback:false,
+      revalidate:30,
     }
   }
   

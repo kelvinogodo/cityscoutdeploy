@@ -89,6 +89,7 @@ export const getStaticPaths = async()=>{
   return{
     paths,
     fallback:false,
+    revalidate:30,
   }
 }
 export default Posts
