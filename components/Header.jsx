@@ -18,15 +18,15 @@ const Header = ({toggleMenu}) => {
                     <Link href='/' className={headerStyles.link}>home</Link>
                 </li>
                 <li>
-                    <Link href='/about' className={headerStyles.link}>about</Link>
+                    <Link href='/About' className={headerStyles.link}>about</Link>
                 </li>
                 <li>
-                    <Link href='/service' className={headerStyles.link}>service</Link>
+                    <Link href='/Service' className={headerStyles.link}>service</Link>
                 </li>
             </ul>
         </nav>
         <div className={headerStyles.contactBtnContainer}>
-            <Link href='/contact' className={headerStyles.contactBtn} >contact</Link>
+            <Link href='/Contact' className={headerStyles.contactBtn} >contact</Link>
         </div>
     </header>
   )
