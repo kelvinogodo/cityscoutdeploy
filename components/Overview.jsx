@@ -65,9 +65,12 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await fetch(`${getBaseApiUrl()}/api/upload`,
+    const req = await fetch(`${getBaseApiUrl()}/upload`,
     {
       method:'POST',
+      headers:{
+        'content-Type':'multipart/form-data'
+      },
       formData
     }
     )
