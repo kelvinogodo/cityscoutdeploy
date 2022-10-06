@@ -511,6 +511,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
                 setPostImage(e.target.files[0].name.toString())
                 const image = e.target.files[0]
                 setUploadImage(image)
+                console.log(image)
               }}
               required
             />
