@@ -58,8 +58,21 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [postImage, setPostImage] = useState()
   const [postDate,setPostDate] = useState()
   const [postCategory,setPostCategory] = useState('normal')
-
+  const uploadFile = async ()=>{
+    const formData = new FormData
+    formData.append('theFiles',uploadImage)
+    console.log(uploadImage)
+    const req = await fetch(`${getBaseApiUrl()}/upload`,
+    {
+      method:'POST',
+      body:formData
+    }
+    )
+    const res = req.json()
+    console.log(res)
+  }
   const createPost = async ()=>{
+    await uploadFile()
     const date = new Date().toLocaleDateString()
     setPostDate(date)
     const newPost = {
@@ -330,19 +343,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
  
   const [uploadImage,setUploadImage] = useState()
 
-  const uploadFile = async ()=>{
-    const formData = new FormData
-    formData.append('theFiles',uploadImage)
-    console.log(uploadImage)
-    const req = await fetch(`${getBaseApiUrl()}/upload`,
-    {
-      method:'POST',
-      body:formData
-    }
-    )
-    const res = req.json()
-    console.log(res)
-  }
+  
   const [propertyImages, setPropertyImages] = useState([])
   const uploadPropertyImages = async () =>{
     const formData = new FormData
@@ -489,7 +490,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           <form className="create-post-form" onSubmit={(e)=>{
             e.preventDefault()
             createPost()
-            uploadFile()
             }}>
             <input type="text" required placeholder='post title'className='input' 
             onChange={(e)=>{
