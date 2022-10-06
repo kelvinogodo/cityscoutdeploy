@@ -70,7 +70,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       method:'POST',
       headers:{
         'Content-Type': 'multipart/form-data',
-        'User-Agent': '*',
       },
       body:formData
     }
