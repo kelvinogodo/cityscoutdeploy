@@ -9,7 +9,7 @@ export default async function handler({query:{id}}, res) {
             res.status(200).json(filteredPost[0])
         }
         else{
-            res.status(404).json({message : `post with the id ${id} does not exist`})
+            res.status(404).json({message : `post with the title ${id} does not exist`})
         }
     }
    
