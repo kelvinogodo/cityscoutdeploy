@@ -64,7 +64,8 @@ export const getStaticProps = async (context)=>{
     console.log(post)
     return{
       props:{
-        post
+        post,
+        revalidate:30,
       }
     }
   }
@@ -89,7 +90,6 @@ export const getStaticPaths = async()=>{
   return{
     paths,
     fallback:false,
-    revalidate:30,
   }
 }
 export default Posts

@@ -79,7 +79,8 @@ export const getStaticProps = async (context)=>{
     const property = await req.json()
     return{
       props:{
-        property
+        property,
+        revalidate:30,
       }
     }
   }
@@ -99,7 +100,6 @@ export const getStaticProps = async (context)=>{
     return{
       paths,
       fallback:false,
-      revalidate:30,
     }
   }
   
