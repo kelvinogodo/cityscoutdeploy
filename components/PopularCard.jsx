@@ -16,7 +16,7 @@ import {ImPriceTags} from 'react-icons/im'
 const PopularCard = ({item}) => {
   return (
     <motion.div layout className={`card popular-card`} data-aos={'fade-up'}>
-        <Link href='/properties/[id]' as={`/properties/${item._id}`}  className='popular-view-more'> </Link>
+        <Link href='/Properties/[id]' as={`/Properties/${item._id}`}  className='popular-view-more'> </Link>
         <div className='card-swiper-cont'>
           <Swiper
           spaceBetween={30}

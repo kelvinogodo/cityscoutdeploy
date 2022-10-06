@@ -44,7 +44,7 @@ const Properties = ({property}) => {
               </div>
             </div>
             <div className="description-card">
-              <Link href='/properties'>back to home</Link>
+              <Link href='/Properties'>back to home</Link>
             </div>
           </div>
       </section>
