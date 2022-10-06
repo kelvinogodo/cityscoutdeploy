@@ -64,7 +64,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const uploadFile = async ()=>{
     const formData = new FormData
-    formData.append('theFiles',uploadImage)
+    formData.append('file',uploadImage)
     console.log(uploadImage)
     const req = await axios.post(`${getBaseApiUrl()}/upload`,formData,
       {headers:{
