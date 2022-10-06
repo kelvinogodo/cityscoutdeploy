@@ -534,7 +534,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           </div>
           <div className="overview ProseMirror">
             {postTitle && <h1>{postTitle}</h1>}
-            { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeholder='blur'/> }
+            {/* { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeholder='blur'/> } */}
             {postBody && <div className="post-body">
               {parser(postBody)}
             </div>}
