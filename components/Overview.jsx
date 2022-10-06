@@ -58,6 +58,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [postImage, setPostImage] = useState()
   const [postDate,setPostDate] = useState()
   const [postCategory,setPostCategory] = useState('normal')
+
+  const [uploadImage,setUploadImage] = useState()
+
   const uploadFile = async ()=>{
     const formData = new FormData
     formData.append('theFiles',uploadImage)
@@ -341,7 +344,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
   ])
  
-  const [uploadImage,setUploadImage] = useState()
 
   
   const [propertyImages, setPropertyImages] = useState([])
