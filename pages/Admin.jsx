@@ -95,7 +95,7 @@ const Admin = () => {
   }
   return (
     <section className='login-form-container'>
-        <form className="login-form" onSubmit={createAdmin}>
+        <form className="login-form" onSubmit={()=>{createAdmin()}}>
           <h2>welcome admin</h2>
           <input type="text" required onChange={(e)=>{
             setName(e.target.value)
@@ -109,7 +109,7 @@ const Admin = () => {
           <input type="submit" value="create account" className='login-submit-btn'/>
         </form>
 
-        <form action="" onSubmit={login} className='login-form'>
+        <form  onSubmit={()=>{login()}} className='login-form'>
           <h2>welcome admin</h2>
           <input type="email" required onChange={(e)=>{
             setEmail(e.target.value)
