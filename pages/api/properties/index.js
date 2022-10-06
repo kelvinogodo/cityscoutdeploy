@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     const properties = await Properties.find()
     if(properties !== []){
         res.status(200).json(properties)
+        console.log(properties)
     }
     else{
         res.status(400).json([])
