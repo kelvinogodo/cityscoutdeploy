@@ -19,7 +19,7 @@ const BlogCard = ({item}) => {
               <AiTwotoneCalendar className='calender-icon'/>
               <p>{item.date}</p>
             </div>
-              <Link href='/Post/[id]' as={`/Post/${item.title.trim()}`}>
+              <Link href='/Post/[id]' as={`/Post/${item.title}`}>
                 read more
               </Link>
         </div> 

@@ -85,7 +85,7 @@ export const getStaticPaths = async()=>{
   )
   const posts = await req.json()
   const ids = Array.isArray(posts) ? posts.map(post =>(post.title)) : []  
-  const paths = ids.map(id =>({params : {id : id.trim()}}))
+  const paths = ids.map(id =>({params : {id : id}}))
   return{
     paths,
     fallback:false,
