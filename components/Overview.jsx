@@ -73,7 +73,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       },
     }
     )
-    console.log(req.json())
+    console.log(req.json() ? res.json() : 'we succeded')
   }
   
   const createPost = async ()=>{

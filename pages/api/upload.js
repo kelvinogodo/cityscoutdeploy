@@ -18,7 +18,7 @@ export default async function upload(req, res){
         res.json(`sorry something went wrong ${err}`)
       }
       else{
-        res.json(req.file)
+        res.send(req.file)
       }
     })
 
