@@ -1,4 +1,6 @@
-res.json('im working')
+export default async function upload(req, res){
+  res.send('im working')
+}
 // import nextConnect from 'next-connect';
 // import multer from 'multer';
 
