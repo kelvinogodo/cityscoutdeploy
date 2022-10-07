@@ -16,7 +16,7 @@ export default async function Upload(req, res){
     upload(req, res, (err)=>{
       if(err){
         console.log(err)
-        res.json(`sorry something went wrong ${err}`)
+        res.json(`sorry something went wrong boss ${err}`)
       }
       else{
         res.json(req.file)
