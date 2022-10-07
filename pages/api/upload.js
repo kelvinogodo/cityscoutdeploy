@@ -26,7 +26,7 @@ export default async function upload(req, res){
 
     apiRoute.use(upload.single('theFiles'));
 
-    res.send(multer.diskStorage.filename())
+    res.send(multer.diskStorage.filename)
     
 //     apiRoute.post((req, res) => {
 //       res.status(200).json({ data: 'success' });
