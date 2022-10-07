@@ -1,6 +1,5 @@
 import multer from 'multer';
 export default async function Upload(req, res){
-  console.log(req.body)
   const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/')

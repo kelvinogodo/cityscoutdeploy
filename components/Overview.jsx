@@ -345,20 +345,19 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   
   const [propertyImages, setPropertyImages] = useState([])
+
   const uploadPropertyImages = async () =>{
     const formData = new FormData
     propertyImages.forEach(file =>{
-      formData.append('theFiles',file)
+      formData.append('propimg',file)
     } )
-    console.log(uploadImage)
-    const req = await fetch(`${getBaseApiUrl()}/uploadPropertyImages`,
+    console.log(propertyImages)
+    await fetch(`${getBaseApiUrl()}/uploadPropertyImages`,
     {
       method:'POST',
       body:formData
     }
     )
-    const res = req.json()
-    console.log(res)
   }
   const [propertyTypes,setPropertyTypes] = useState([
     {
@@ -567,18 +566,18 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
               setPropertyDescription(description)
             }}/>
             <label htmlFor="file-upload-input" className='label'>full view picture</label>
-            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' onChange={(e)=>{
+            <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' onChange={(e)=>{
               const frontImage  = e.target.files[0].name.toString()
               propertyImages.push(e.target.files[0])
               setFrontViewImage(frontImage)
             }}/>
             <label htmlFor="file-upload-input" className='label'>side view picture</label>
-            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' onChange={(e)=>{
+            <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' onChange={(e)=>{
               const sideImage  = e.target.files[0].name.toString()
               propertyImages.push(e.target.files[0])
               setSideViewImage(sideImage)}}/>
             <label htmlFor="file-upload-input" className='label'>side view picture</label>
-            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input'onChange={(e)=>{
+            <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input'onChange={(e)=>{
               const backImage  = e.target.files[0].name.toString()
               propertyImages.push(e.target.files[0])
               setBackViewImage(backImage)}} />

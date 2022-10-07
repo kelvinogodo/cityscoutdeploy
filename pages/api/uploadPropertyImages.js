@@ -1,29 +1,29 @@
-import nextConnect from 'next-connect';
 import multer from 'multer';
-
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: './public/',
-    filename: (req, file, cb) => cb(null, file.originalname),
-  }),
-});
-
-const apiRoute = nextConnect({
-  onError(error, req, res) {
-    res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
+export default async function Upload(req, res){
+  console.log(req.body)
+  const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/')
   },
-  onNoMatch(req, res) {
-    res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
   },
-});
-
-apiRoute.use(upload.array('theFiles'));
-
-apiRoute.post((req, res) => {
-  res.status(200).json({ data: 'success' });
-});
-
-export default apiRoute;
+})
+    const upload = multer({
+      storage:storage
+    }).array('propimg');
+    
+    upload(req, res, (err)=>{
+      if(err){
+        console.log(err)
+        res.json(`sorry something went wrong boss ${err}`)
+      }
+      else{
+        res.json(req.file)
+        console.log(`this is the file info ${req.file}`)
+      }
+    })
+}
 
 export const config = {
   api: {
