@@ -26,7 +26,7 @@ export default async function upload(req, res){
 
     apiRoute.use(upload.single('theFiles'));
 
-    res.send(upload.storage.filename)
+    res.send(file.name).json('we are up and running')
     
 //     apiRoute.post((req, res) => {
 //       res.status(200).json({ data: 'success' });
