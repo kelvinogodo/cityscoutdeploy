@@ -2,7 +2,9 @@ import nextConnect from 'next-connect';
 import multer from 'multer';
 export default async function upload(req, res){
   const storage = multer.diskStorage({
-  destination: './public/',
+  destination: function (req, file, cb) {
+    cb(null, '/public/')
+  },
   filename: function (req, file, cb) {
     cb(null, file.originalname)
   },
