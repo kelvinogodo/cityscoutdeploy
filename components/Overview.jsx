@@ -105,7 +105,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
         break;
       default: Swal.fire(
         'warning',
-        `res`,
+        `${res.json()}`,
         'warning'
       )
         break;
