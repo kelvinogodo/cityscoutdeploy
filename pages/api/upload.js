@@ -14,23 +14,25 @@ export default async function upload(req, res){
       storage:storage
     }).single('theFiles');
     
-    const apiRoute = nextConnect({
-      onError(error, req, res) {
-        res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
-      },
-      onNoMatch(req, res) {
-        res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
-      },
-    });
-
-    apiRoute.use(upload(req, res, (err)=>{
+    upload(req, res, (err)=>{
       if(err){
         res.send(`sorry something went wrong ${err}`)
       }
       else{
         res.send(req.file)
       }
-    }));
+    })
+
+    // const apiRoute = nextConnect({
+    //   onError(error, req, res) {
+    //     res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
+    //   },
+    //   onNoMatch(req, res) {
+    //     res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
+    //   },
+    // });
+
+    // apiRoute.use();
     
 //     apiRoute.post((req, res) => {
 //       res.status(200).json({ data: 'success' });
