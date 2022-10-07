@@ -3,7 +3,7 @@ export default async function Upload(req, res){
   console.log(req.body)
   const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/')
+    cb(null, './public/')
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname)
