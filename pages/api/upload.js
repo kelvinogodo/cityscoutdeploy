@@ -1,11 +1,17 @@
 import nextConnect from 'next-connect';
 import multer from 'multer';
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
 try{const upload = multer({
-  storage: multer.diskStorage({
-    destination: './public/',
-    filename: (req, file, cb) => cb(null, file.originalname),
-  }),
+  storage:storage
 });
 
 const apiRoute = nextConnect({
