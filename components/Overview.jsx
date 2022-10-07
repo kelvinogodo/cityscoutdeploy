@@ -75,9 +75,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     )
     console.log(req.json())
   }
-  
+  const date = new Date.now()
   const createPost = async ()=>{
-    const date = new Date.now()
     setPostDate(date)
     const newPost = {
       title:`${postTitle}`,
