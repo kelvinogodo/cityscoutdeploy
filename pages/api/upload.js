@@ -6,7 +6,6 @@ export default async function upload(req, res){
     cb(null, './public/')
   },
   filename: function (req, file, cb) {
-    // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
     cb(null, file.originalname)
   },
 })
@@ -16,11 +15,11 @@ export default async function upload(req, res){
     
     upload(req, res, (err)=>{
       if(err){
-        res.send(`sorry something went wrong ${err}`)
+        // res.send(`sorry something went wrong ${err}`)
         res.json(`sorry something went wrong ${err}`)
       }
       else{
-        res.send(req.file)
+        // res.send(req.file)
         res.json(req.file)
       }
     })
