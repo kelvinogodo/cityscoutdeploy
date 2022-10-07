@@ -2,7 +2,6 @@ import nextConnect from 'next-connect';
 import multer from 'multer';
 
 export default async function upload(req, res){
-  res.send('im working')
   const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/')
@@ -17,19 +16,21 @@ export default async function upload(req, res){
     });
     
     apiRoute.use(upload.single('theFiles'));
+
+    res.send('i work')
     
-    apiRoute.post((req, res) => {
-      res.status(200).json({ data: 'success' });
-    });
+//     apiRoute.post((req, res) => {
+//       res.status(200).json({ data: 'success' });
+//     });
     
-const apiRoute = nextConnect({
-  onError(error, req, res) {
-    res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
-  },
-  onNoMatch(req, res) {
-    res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
-  },
-});
+// const apiRoute = nextConnect({
+//   onError(error, req, res) {
+//     res.status(501).json({ error: `Sorry something Happened! ${error.message}` });
+//   },
+//   onNoMatch(req, res) {
+//     res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
+//   },
+// });
 }
 
 export const config = {
