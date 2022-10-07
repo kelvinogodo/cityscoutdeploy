@@ -17,9 +17,11 @@ export default async function upload(req, res){
     upload(req, res, (err)=>{
       if(err){
         res.send(`sorry something went wrong ${err}`)
+        res.json(`sorry something went wrong ${err}`)
       }
       else{
         res.send(req.file)
+        res.json(req.file)
       }
     })
 

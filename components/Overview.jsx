@@ -73,7 +73,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       },
     }
     )
-    console.log(req)
+    console.log(req.json())
   }
   
   const createPost = async ()=>{
