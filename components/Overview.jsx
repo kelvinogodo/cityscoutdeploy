@@ -78,7 +78,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
 
   const createPost = async ()=>{
-    const date = new Date().toLocaleDateString()
+    const date = new Date.now().toLocaleDateString()
     setPostDate(date)
     const newPost = {
       title:`${postTitle}`,
@@ -88,8 +88,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await axios.post(`${getBaseApiUrl()}/createPost`,
+    const req = await fetch(`${getBaseApiUrl()}/createPost`,
     {
+      method:'POST',
       headers:{
       'content-Type': 'application/json'
       },

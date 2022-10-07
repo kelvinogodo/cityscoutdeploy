@@ -13,7 +13,6 @@ export default async function   createPost(req, res){
         })
         res.json('created')
     } catch (error) {
-        console.log(error)
         res.json(error)
     }
 }
