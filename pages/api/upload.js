@@ -9,7 +9,7 @@ export default async function upload(req, res){
   filename: function (req, file, cb) {
     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
     cb(null, file.originalname)
-  }
+  },
 })
     const upload = multer({
       storage:storage
@@ -26,7 +26,7 @@ export default async function upload(req, res){
 
     apiRoute.use(upload.single('theFiles'));
 
-    res.send(upload.storage.filename)
+    res.send(upload)
     
 //     apiRoute.post((req, res) => {
 //       res.status(200).json({ data: 'success' });
