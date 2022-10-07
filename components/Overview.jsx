@@ -68,6 +68,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     console.log(uploadImage)
     const req = await axios.post(`${getBaseApiUrl()}/upload`,
       {
+      headers:{
+        'content-Type': 'application/json'
+      },
       body:formData,
     }
     )
@@ -85,9 +88,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
-    const req = await fetch(`${getBaseApiUrl()}/createPost`,
+    const req = await axios.post(`${getBaseApiUrl()}/createPost`,
     {
-      method:'POST',
       headers:{
       'content-Type': 'application/json'
       },
@@ -105,7 +107,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
         break;
       default: Swal.fire(
         'warning',
-        `${res.json()}`,
+        `${res}`,
         'warning'
       )
         break;

@@ -1,7 +1,6 @@
 import { connectMongo } from "../../utils/connectMongo"
 import Post from "../../models/postModel"
 export default async function   createPost(req, res){
-    console.log("connecting to mongodb")
     await connectMongo() 
     try {
         Post.create({
@@ -12,7 +11,6 @@ export default async function   createPost(req, res){
             image:req.body.image,
             category:req.body.category
         })
-        console.log("post successfully created")
         res.json('created')
     } catch (error) {
         console.log(error)
