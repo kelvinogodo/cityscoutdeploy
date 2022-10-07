@@ -1,6 +1,5 @@
 import nextConnect from 'next-connect';
 import multer from 'multer';
-import path from 'path'
 export default async function upload(req, res){
   const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -8,12 +7,12 @@ export default async function upload(req, res){
   },
   filename: function (req, file, cb) {
     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.originalname + path.extname)
+    cb(null, file.originalname)
   },
 })
     const upload = multer({
       storage:storage
-    });
+    }).single('theFiles');
     
     const apiRoute = nextConnect({
       onError(error, req, res) {
@@ -24,9 +23,14 @@ export default async function upload(req, res){
       },
     });
 
-    apiRoute.use(upload.single('theFiles'));
-
-    res.send('we are up and running')
+    apiRoute.use(upload(req, res, (err)=>{
+      if(err){
+        res.send(`sorry something went wrong ${err}`)
+      }
+      else{
+        res.send(req.file)
+      }
+    }));
     
 //     apiRoute.post((req, res) => {
 //       res.status(200).json({ data: 'success' });
