@@ -25,10 +25,12 @@ export default async function upload(req, res){
     });
 
     apiRoute.use(upload.single('theFiles'));
+
+    res.send('i work')
     
-    apiRoute.post((req, res) => {
-      res.status(200).json({ data: 'success' });
-    });  
+//     apiRoute.post((req, res) => {
+//       res.status(200).json({ data: 'success' });
+//     });  
 }
 
 export const config = {
