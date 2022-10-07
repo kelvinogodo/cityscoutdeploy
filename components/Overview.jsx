@@ -69,7 +69,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const req = await axios.post(`${getBaseApiUrl()}/upload`,
       {
       headers:{
-        'content-Type': 'application/json'
+        'content-Type': 'multipart/json-data'
       },
       body:formData,
     }
