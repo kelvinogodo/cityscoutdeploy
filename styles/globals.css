@@ -2634,8 +2634,8 @@ footer{
   .user-icon-container{
     position:relative;
   }
-  .user-icon-container:hover > .tooltip{
-    scale:1;
+  .user-icon-container:hover > span.tooltip{
+    transform: scale(1);
   }
   .tooltip span{
     display:flex;
@@ -2665,7 +2665,7 @@ footer{
     background-color:var(--color-dark);
     transform:translateX(-50%);
     display: flex;
-    scale: 0;
+    transform:scale(0);
     align-items:center;
     justify-content:flex-start;
     padding:10px;
