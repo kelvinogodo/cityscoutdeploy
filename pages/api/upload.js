@@ -4,7 +4,7 @@ import multer from 'multer';
 export default async function upload(req, res){
   const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './public/')
+    cb(null, '/public/')
   },
   filename: function (req, file, cb) {
     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -26,7 +26,7 @@ export default async function upload(req, res){
 
     apiRoute.use(upload.single('theFiles'));
 
-    res.send(upload)
+    res.send(multer.diskStorage.filename())
     
 //     apiRoute.post((req, res) => {
 //       res.status(200).json({ data: 'success' });
