@@ -29,8 +29,7 @@ apiRoute.post((req, res) => {
   res.status(200).json({ data: 'success' });
 });
 }catch(err){
-  res.json(err.message)
-  console.log(err.message)
+  res.json(err)
 }
 export default apiRoute;
 

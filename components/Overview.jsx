@@ -66,10 +66,10 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     formData.append('theFiles',uploadImage)
     console.log(uploadImage)
-    const req = await axios.post(`${getBaseApiUrl()}/upload`,formData,
-      {headers:{
-        'content-Type':'multipart/form-data',
-      }}
+    const req = await axios.post(`${getBaseApiUrl()}/upload`,
+      {
+      body:formData,
+    }
     )
     console.log(req)
   }
@@ -523,7 +523,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           <form onSubmit={
             (e)=>{e.preventDefault()
               uploadFile()
-          }} className="create-post-form">
+          }} className="create-post-form" encType='multipart/form-data'>
             <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
                onChange={(e)=>{
                 setPostImage(e.target.files[0].name)
