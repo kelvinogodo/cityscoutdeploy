@@ -490,6 +490,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           <form className="create-post-form" onSubmit={(e)=>{
             e.preventDefault()
             createPost()
+            uploadFile()
             }}>
             <input type="text" required placeholder='post title'className='input' 
             onChange={(e)=>{
@@ -506,6 +507,15 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
                 setPostAuthor(author)
               }} required
             />
+            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
+               onChange={(e)=>{
+                setPostImage(e.target.files[0].name)
+                const image = e.target.files[0]
+                setUploadImage(image)
+                console.log(image)
+              }}
+              required
+            />
             <span className='create-category'>choose category</span>
             <div className="category-btn-container"> 
             {
@@ -520,21 +530,13 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             </div>
             <input type="submit" value="create post" className='create-btn'/>
           </form>
-          <form onSubmit={
+          {/* <form onSubmit={
             (e)=>{e.preventDefault()
               uploadFile()
           }} className="create-post-form" encType='multipart/form-data'>
-            <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
-               onChange={(e)=>{
-                setPostImage(e.target.files[0].name)
-                const image = e.target.files[0]
-                setUploadImage(image)
-                console.log(image)
-              }}
-              required
-            />
+            
             <input type="submit" value='upload' className='create-btn'/>
-          </form>
+          </form> */}
           </div>
           <div className="overview ProseMirror">
             {postTitle && <h1>{postTitle}</h1>}
