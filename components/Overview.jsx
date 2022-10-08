@@ -73,11 +73,13 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     )
     const res = await req.json()
+    await asignUrl(res.secure_url)
     console.log(`${res.secure_url} .... upload ran first`)
-    setPostImage(`${res.secure_url}`)
     console.log(postImage)
   }
-  
+  const asignUrl= async (url)=>{
+    setPostImage(url)
+  }
   const createPost = async ()=>{
     await uploadFile()
     console.log('the create post function just ran')
