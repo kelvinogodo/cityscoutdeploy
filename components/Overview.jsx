@@ -325,6 +325,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     const formData = new FormData
     const backData = new FormData
     const sideData = new FormData
+    
     sideData.append('file',sideview)
     sideData.append('upload_preset','upload');
 
