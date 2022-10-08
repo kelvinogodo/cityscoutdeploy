@@ -74,13 +74,12 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     )
     const res = await req.json()
     console.log(`${res.secure_url} .... upload ran first`)
-    setPostImage(url)
+    setPostImage(res.secure_url)
   }
   useEffect(()=>{
     createPost()
     console.log(postImage)
   },[postImage])
-
   const createPost = async ()=>{
     console.log('the create post function just ran')
     const date = Date.now().toString()
