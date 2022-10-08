@@ -2752,4 +2752,7 @@ footer{
   .blog-header a{
     font-size:.9rem;
   }
+  .blog-card{
+    width: 95%;
+  }
 }

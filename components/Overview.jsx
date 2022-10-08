@@ -76,10 +76,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     console.log(`${res.secure_url} .... upload ran first`)
     await createPost(res.secure_url)
   }
-  // useEffect(()=>{
-  //   createPost()
-  //   console.log(postImage)
-  // },[postImage])
 
   const createPost = async (url)=>{
     console.log('the create post function just ran')
@@ -134,45 +130,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [backViewImage, setBackViewImage] = useState()
   const [propertyType, setPropertyType] = useState()
 
-  // function for creating property 
-  const createProperty = async ()=>{
-    const newProperty = {
-      description:`${propertyDescription}`,
-      location:`${propertyLocation}`,
-      price:`${propertyPrice}`,
-      frontViewImage: `${frontViewImage}`,
-      sideViewImage:`${sideViewImage}`,
-      backViewImage:`${backViewImage}`,
-      type:propertyType,
-    }
-    const request = await fetch(`${getBaseApiUrl()}/createProperty`,
-    {
-      method:'POST',
-      headers:{
-        'content-Type':'application/json',
-      },
-      body: JSON.stringify(newProperty)
-    }
-    )
-    const response = await request.json()
-    switch (response.status) {
-      case 200:
-        Swal.fire(
-          'congrats',
-          'property successfully created ',
-          'success'
-        )
-        break;
-    
-      default: Swal.fire(
-        'warning',
-        'something went wrong ',
-        'warning'
-      )
-        break;
-    }
-    fetchData()
-  }
+  
   // delete post function 
   const deletePost = async (id)=>{
     const deleteRequest = await fetch(`${getBaseApiUrl()}/deletePost`,
@@ -361,15 +319,58 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const uploadPropertyImages = async () =>{
     const formData = new FormData
     propertyImages.forEach(file =>{
-      formData.append('propimg',file)
+      formData.append('file',file)
     } )
-    console.log(propertyImages)
-    await fetch(`${getBaseApiUrl()}/uploadPropertyImages`,
-    {
+    formData.append('upload_preset','upload');
+    const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
+      {
       method:'POST',
-      body:formData
+      body:formData,
     }
     )
+    const res = await req.json()
+    console.log(`${res} .... upload ran first`)
+    // await createPost(res.secure_url)
+  }
+
+  // function for creating property 
+  const createProperty = async ()=>{
+    const newProperty = {
+      description:`${propertyDescription}`,
+      location:`${propertyLocation}`,
+      price:`${propertyPrice}`,
+      frontViewImage: `${frontViewImage}`,
+      sideViewImage:`${sideViewImage}`,
+      backViewImage:`${backViewImage}`,
+      type:propertyType,
+    }
+    const request = await fetch(`${getBaseApiUrl()}/createProperty`,
+    {
+      method:'POST',
+      headers:{
+        'content-Type':'application/json',
+      },
+      body: JSON.stringify(newProperty)
+    }
+    )
+    const response = await request.json()
+    switch (response.status) {
+      case 200:
+        Swal.fire(
+          'congrats',
+          'property successfully created ',
+          'success'
+        )
+        break;
+    
+      default: Swal.fire(
+        'warning',
+        'something went wrong ',
+        'warning'
+      )
+        break;
+    }
+    fetchData()
   }
   const [propertyTypes,setPropertyTypes] = useState([
     {
@@ -559,7 +560,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           <div className="form-view">
           <form className="create-post-form create-property" onSubmit={(e)=>{
             e.preventDefault()
-            createProperty()
             uploadPropertyImages()
           }}>
             <input type="text" placeholder='property price'className='input' onChange={(e)=>{
