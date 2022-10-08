@@ -391,7 +391,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       {
         isLoading && 
         <div className="loader">
-          
+          <Image src='/gif.gif' width={500} height={500} />
         </div>
       }
       {
