@@ -74,14 +74,14 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     )
     const res = await req.json()
     console.log(`${res.secure_url} .... upload ran first`)
-  }
-  const asignUrl= async (url)=>{
     setPostImage(url)
-    console.log(postImage)
   }
+  useEffect(()=>{
+    createPost()
+    console.log(postImage)
+  },[postImage])
+
   const createPost = async ()=>{
-    await uploadFile()
-    await asignUrl(res.secure_url)
     console.log('the create post function just ran')
     const date = Date.now().toString()
     setPostDate(date)
@@ -500,7 +500,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           <div className="form-view">
           <form className="create-post-form" onSubmit={(e)=>{
             e.preventDefault()
-            createPost()
+            uploadFile()
             }}>
             <input type="text" required placeholder='post title'className='input' 
             onChange={(e)=>{
