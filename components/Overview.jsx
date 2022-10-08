@@ -316,34 +316,60 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
  
 
   
-  const [propertyImages, setPropertyImages] = useState([])
+  const [fullview, setFullview] = useState()
+  const [sideview, setSideview] = useState()
+  const [backview, setBackview] = useState()
 
   const uploadPropertyImages = async () =>{
+    setIsLoading(true)
     const formData = new FormData
-    propertyImages.forEach(file =>{
-      formData.append('file',file)
-    } )
+    const backData = new FormData
+    const sideData = new FormData
+    sideData.append('file',sideview)
+    sideData.append('upload_preset','upload');
+
+    backData.append('file',backview)
+    backData.append('upload_preset','upload');
+
+    formData.append('file',fullview)
     formData.append('upload_preset','upload');
-    const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
+
+    const [reqFull, reqSide, reqBack] = await Promise.all([ 
+      fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
       {
       method:'POST',
       body:formData,
     }
+    ),
+    fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
+      {
+      method:'POST',
+      body:sideData,
+    }
+    ),
+    fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
+      {
+      method:'POST',
+      body:backData,
+    }
     )
-    const res = await req.json()
-    console.log(`${res} .... upload ran first`)
-    // await createPost(res.secure_url)
+  ])
+    const [fullRes,sideRes,backRes] = await Promise.all([
+      reqFull.json(), reqSide.json(), reqBack.json()
+    ])
+    fullRes && setIsLoading(false)
+    await createProperty(fullRes.secure_url,sideRes.secure_url,backRes.secure_url)
   }
 
   // function for creating property 
-  const createProperty = async ()=>{
+  const createProperty = async (full,side,back)=>{
     const newProperty = {
       description:`${propertyDescription}`,
       location:`${propertyLocation}`,
       price:`${propertyPrice}`,
-      frontViewImage: `${frontViewImage}`,
-      sideViewImage:`${sideViewImage}`,
-      backViewImage:`${backViewImage}`,
+      frontViewImage:full,
+      sideViewImage:side,
+      backViewImage:back,
       type:propertyType,
     }
     const request = await fetch(`${getBaseApiUrl()}/createProperty`,
@@ -391,7 +417,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       {
         isLoading && 
         <div className="loader">
-          <Image src='/gif.gif' width={500} height={500} />
+          <Image src='/gif.gif' width={500} height={500} priority/>
         </div>
       }
       {
@@ -575,21 +601,24 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
               setPropertyDescription(description)
             }}/>
             <label htmlFor="file-upload-input" className='label'>full view picture</label>
-            <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' onChange={(e)=>{
-              const frontImage  = e.target.files[0].name.toString()
-              propertyImages.push(e.target.files[0])
-              setFrontViewImage(frontImage)
+            <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' 
+              // const [fullview, setFullview] = useState()
+              // const [sideview, setSideview] = useState()
+              // const [backview, setBackview] = useState()
+            onChange={(e)=>{
+              const frontImage  = e.target.files[0]
+              setFullview(frontImage)
             }}/>
             <label htmlFor="file-upload-input" className='label'>side view picture</label>
             <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input' onChange={(e)=>{
-              const sideImage  = e.target.files[0].name.toString()
-              propertyImages.push(e.target.files[0])
-              setSideViewImage(sideImage)}}/>
+              const sideImage  = e.target.files[0]
+              setSideview(sideImage)
+              }}/>
             <label htmlFor="file-upload-input" className='label'>side view picture</label>
             <input type="file" name='propimg' accept=".png,.jpg,.webp,.svg,.jpeg" id="file-upload-input" className='file-upload-input'onChange={(e)=>{
-              const backImage  = e.target.files[0].name.toString()
-              propertyImages.push(e.target.files[0])
-              setBackViewImage(backImage)}} />
+              const backImage  = e.target.files[0]
+              setBackview(backImage)
+              }} />
             <span className='create-category'>choose property type</span>
             <div className="category-btn-container"> 
             {

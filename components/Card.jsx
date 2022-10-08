@@ -36,13 +36,13 @@ const Card = ({item,addedClass}) => {
             </div>
           </div>
         <SwiperSlide className='card-slider'>
-          <Image src={`/${item.frontViewImage}`} alt="property image" placeholder='blur' className='card-img' width={350} priority height={230} blurDataURL={`/${item.frontViewImage}`} />  
+          <img src={`${item.frontViewImage}`} alt="property image" placeholder='blur' className='card-img' width={350} priority height={230} blurDataURL={`${item.frontViewImage}`} />  
         </SwiperSlide>
         <SwiperSlide className='card-slider'>
-        <Image src={`/${item.sideViewImage}`} alt="property image" placeholder='blur' className='card-img' width={350} priority height={230} blurDataURL={`/${item.sideViewImage}`} />
+        <img src={`${item.sideViewImage}`} alt="property image" placeholder='blur' className='card-img' width={350} priority height={230} blurDataURL={`/${item.sideViewImage}`} />
         </SwiperSlide>
         <SwiperSlide className='card-slider'>
-        <Image src={`/${item.backViewImage}`} alt="property image" placeholder='blur' className='card-img' width={350} priority height={230} blurDataURL={`/${item.backViewImage}`} />
+        <img src={`${item.backViewImage}`} alt="property image" placeholder='blur' className='card-img' width={350} priority height={230} blurDataURL={`/${item.backViewImage}`} />
         </SwiperSlide>
         </Swiper>
       </div>
