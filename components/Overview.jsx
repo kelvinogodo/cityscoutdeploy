@@ -26,7 +26,7 @@ export const getBaseApiUrl = () => {
   return url;
 };
 const Overview = ({showOverview,showCreateSection,showEditSection,showCreatePropertySection,showEditPropertySection}) => {
-
+  const [isLoading,setIsLoading] = useState(false)
   // posts and properties state managers 
   const [posts,setPosts]= useState() 
   const [properties,setProperties]= useState() 
@@ -63,6 +63,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [uploadImage,setUploadImage] = useState()
 
   const uploadFile = async ()=>{
+    setIsLoading(true)
     const formData = new FormData
     formData.append('file',uploadImage)
     formData.append('upload_preset','upload');
@@ -73,6 +74,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     }
     )
     const res = await req.json()
+    res && setIsLoading(false)
     console.log(`${res.secure_url} .... upload ran first`)
     await createPost(res.secure_url)
   }
@@ -386,6 +388,12 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   ])
   return (
     <main className='overview-section'>
+      {
+        isLoading && 
+        <div className="loader">
+          
+        </div>
+      }
       {
         postEditForm &&
         <section className='post-view-section'>
