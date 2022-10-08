@@ -42,7 +42,7 @@ const Blog = ({featuredposts}) => {
                     </Link>
                 </div>
                 <div className="featured-post-image-container">
-                    <img src={`/${featured.image}`} alt="featured post image" priority/>
+                    <img src={`${featured.image}`} alt="featured post image" priority/>
                 </div>
                 </SwiperSlide>
             )) : ''
@@ -58,7 +58,7 @@ const Blog = ({featuredposts}) => {
                 {
                     Array.isArray(featuredposts) ? featuredposts.slice(featuredposts.length-2,featuredposts.length-1).reverse().map(related => (
                     <div key={related._id} className="left-container-post-card" style={{position:'relative'}}>
-                    <Image src={`/${related.image}`} alt="related post image" className="blog-img" layout="fill" placeholder="blur" blurDataURL={`/${related.image}`}/>
+                    <Image src={`${related.image}`} alt="related post image" className="blog-img" layout="fill" placeholder="blur" blurDataURL={`${related.image}`}/>
                     <div className="blog-card-text-container">
                         <h1 className='article-title'>{related.title}</h1>
                         <div className='featured-post-body'>
@@ -75,7 +75,7 @@ const Blog = ({featuredposts}) => {
             <div className="right-container">
             { Array.isArray(featuredposts) ? featuredposts.slice(featuredposts.length - 4,featuredposts.length-2).map(featured => (
                 <div key={featured._id} className="right-blog-card" style={{position:'relative'}}>
-                    <Image src={`/${featured.image}`} alt="realted post image" className="blog-img" layout="fill" placeholder="blur" blurDataURL={`/${featured.image}`}/>
+                    <Image src={`${featured.image}`} alt="realted post image" className="blog-img" layout="fill" placeholder="blur" blurDataURL={`${featured.image}`}/>
                     <div className="blog-card-text-container">
                         <h1 className='article-title'>{featured.title}</h1>
                         <div className='featured-post-body'>
