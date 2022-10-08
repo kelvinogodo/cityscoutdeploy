@@ -64,17 +64,23 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
 
   const uploadFile = async ()=>{
     const formData = new FormData
-    formData.append('theFiles',uploadImage)
-    console.log(uploadImage)
-    await fetch(`${getBaseApiUrl()}/upload`,
+    formData.append('file',uploadImage)
+    formData.append('upload_preset','upload');
+    const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
       {
       method:'POST',
       body:formData,
     }
     )
+    const res = await req.json()
+    console.log(`${res.secure_url} .... upload ran first`)
+    setPostImage(`${res.secure_url}`)
+    console.log(postImage)
   }
   
   const createPost = async ()=>{
+    await uploadFile()
+    console.log('the create post function just ran')
     const date = Date.now().toString()
     setPostDate(date)
     const newPost = {
@@ -489,7 +495,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
           <form className="create-post-form" onSubmit={(e)=>{
             e.preventDefault()
             createPost()
-            uploadFile()
             }}>
             <input type="text" required placeholder='post title'className='input' 
             onChange={(e)=>{
@@ -508,10 +513,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             />
             <input type="file" name='theFiles' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
                onChange={(e)=>{
-                setPostImage(e.target.files[0].name)
                 const image = e.target.files[0]
                 setUploadImage(image)
-                console.log(image)
               }}
               required
             />

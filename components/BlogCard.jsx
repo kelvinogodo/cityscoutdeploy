@@ -10,7 +10,7 @@ const BlogCard = ({item}) => {
   return (
     <motion.div layout className="card blog-card" data-aos={'fade-up'}>
       <div className='card-img-container'>
-        <Image src={`/${item.image}`} alt="blog-card-image" className='card-img'  layout='fill' blurDataURL={`/${item.image}`} placeholder='blur' />
+        <img src={item.image} alt="blog-card-image" className='card-img'  layout='fill' blurDataURL={`/${item.image}`} placeholder='blur' />
       </div>
         <div className="card-body ProseMirror blog-card-body">
             <h1>{item.title}</h1>
