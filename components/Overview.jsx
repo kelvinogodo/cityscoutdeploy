@@ -75,7 +75,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
   
   const createPost = async ()=>{
-    const date = Date.toLocaleString()
+    const date = Date.now().toString()
     setPostDate(date)
     const newPost = {
       title:`${postTitle}`,
