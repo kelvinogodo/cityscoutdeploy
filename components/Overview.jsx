@@ -91,6 +91,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       date:`${postDate}`,
       category:`${postCategory}`
     }
+    if(postImage !== 'undefined'){
     const req = await fetch(`${getBaseApiUrl()}/createPost`,
     {
       method:'POST',
@@ -116,6 +117,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       )
         break;
     }
+  }else{
+    return
+  }
     fetchData()
   }
 
