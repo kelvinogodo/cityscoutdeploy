@@ -13,10 +13,10 @@ const Properties = ({property}) => {
       </div>
       <section className='page'>    
           <div className="left-description-body">
-            <img src={`/${property.frontViewImage}`} alt="" className="upper-grid" />
+            <img src={`${property.frontViewImage}`} alt="" className="upper-grid" />
             <div className="lower-grid">
-              <img src={`/${property.sideViewImage}`} alt=""></img>
-              <img src={`/${property.backViewImage}`} alt=""></img>
+              <img src={`${property.sideViewImage}`} alt=""></img>
+              <img src={`${property.backViewImage}`} alt=""></img>
             </div>
           </div>
           <div className="right-description-body">
