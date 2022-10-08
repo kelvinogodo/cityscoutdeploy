@@ -6,7 +6,7 @@ export default async function   createPost(req, res){
         Post.create({
             title:req.body.title,
             body:req.body.body,
-            date:req.body.date !== 'undefined' ? req.body.date : Date.toLocaleString(),
+            date:req.body.date !== 'undefined' ? req.body.date : Date.now().toString(),
             author:req.body.author,
             image:req.body.image,
             category:req.body.category
