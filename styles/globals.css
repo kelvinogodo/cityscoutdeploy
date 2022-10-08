@@ -17,6 +17,9 @@ body {
   top: 0;
   left: 0;
 }
+.loader img{
+  object-fit: contain;
+}
 :root{
   --primary-color:aliceblue;
   --secondary-color:rgb(2,62,138);
