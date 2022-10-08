@@ -12,13 +12,13 @@ const Footer = () => {
           <Link href='/'>
             home
           </Link>
-          <Link href='/service'>
+          <Link href='/Service'>
             service
           </Link>
-          <Link href='/blog'>
+          <Link href='/Blog'>
             blog
           </Link>
-          <Link href='/contact'>
+          <Link href='/Contact'>
             contact
           </Link>
         </div>

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Parser from 'html-react-parser'
-const Posts = ({post}) => {
+const Posts = ({post,id}) => {
   return (
     <main className='page-container'>
       <Head>
@@ -48,23 +48,38 @@ export const getBaseApiUrl = () => {
   return url;
 };
 
-export const getStaticProps = async (context)=>{
+// export const getStaticPaths = async()=>{
+//   const req = await fetch(`${getBaseApiUrl()}/api/posts`,
+//   {
+//     method:'GET',
+//     headers:{
+//       Accept: "application/json; charset=UTF-8",
+//       'Content-Type': 'application/json',
+//       'User-Agent': '*',
+//     }
+//   }
+//   )
+//   const posts = await req.json()
+//   const ids = Array.isArray(posts) ? posts.map(post =>(post.title)) : []  
+//   const paths = ids.map(id =>({params : {id : id}}))
+//   return{
+//     paths,
+//     fallback:false,
+//   }
+// }
+export default Posts
+
+export async function getServerSideProps(context){
   const id = context.params.id
+  console.log(context)
   try{
-    const req = await fetch(`${getBaseApiUrl()}/api/posts/${id}`,
-    {
-      method:'GET',
-      headers:{
-        Accept: "application/json; charset=UTF-8",
-        'Content-Type': 'application/json',
-        'User-Agent': '*',
-      }
-    })
+    const req = await fetch(`${getBaseApiUrl()}/api/posts/${id}`)
     const post = await req.json()
     console.log(post)
     return{
       props:{
         post,
+        id
       }
     }
   }
@@ -72,26 +87,6 @@ export const getStaticProps = async (context)=>{
     console.log(error)
   };
 }
-export const getStaticPaths = async()=>{
-  const req = await fetch(`${getBaseApiUrl()}/api/posts`,
-  {
-    method:'GET',
-    headers:{
-      Accept: "application/json; charset=UTF-8",
-      'Content-Type': 'application/json',
-      'User-Agent': '*',
-    }
-  }
-  )
-  const posts = await req.json()
-  const ids = Array.isArray(posts) ? posts.map(post =>(post.title)) : []  
-  const paths = ids.map(id =>({params : {id : id}}))
-  return{
-    paths,
-    fallback:false,
-  }
-}
-export default Posts
 
 
 

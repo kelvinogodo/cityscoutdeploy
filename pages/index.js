@@ -32,8 +32,8 @@ export default function Home({featuredposts,data}) {
   return (
     <main className={styles.container}>
       <Head>
-        <title>property Agents in Abakaliki</title>
-        <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
+        <title>Property Agents in Abakaliki</title>
+        <meta name="description" content="A Property agency website, for properties around ebonyi state, Nigeria" />
         <link rel="icon" href="/cityScoutlogo.png" />
       </Head>
       <Landpage />
