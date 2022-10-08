@@ -539,17 +539,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             </div>
             <input type="submit" value="create post" className='create-btn'/>
           </form>
-          {/* <form onSubmit={
-            (e)=>{e.preventDefault()
-              uploadFile()
-          }} className="create-post-form" encType='multipart/form-data'>
-            
-            <input type="submit" value='upload' className='create-btn'/>
-          </form> */}
           </div>
           <div className="overview ProseMirror">
             {postTitle && <h1>{postTitle}</h1>}
-            {/* { postImage && <Image height={300} width={400} alt='post image preview' src={`/${postImage}`} blurDataURL={`/${postImage}`} placeholder='blur'/> } */}
             {postBody && <div className="post-body">
               {parser(postBody)}
             </div>}
@@ -608,9 +600,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             {propertyDescription && <p>{propertyDescription}</p>}
             {propertyLocation && <p>{propertyLocation}</p>}
             {propertyPrice && <p>{propertyPrice}</p>}
-            { frontViewImage && <Image height={300} width={400} alt='post image preview' src={`/${frontViewImage}`} blurDataURL={`/${frontViewImage}`} placeholder='blur'/> }
-            { sideViewImage && <Image height={300} width={400} alt='post image preview' src={`/${sideViewImage}`} blurDataURL={`/${sideViewImage}`} placeholder='blur'/> }
-            { backViewImage && <Image height={300} width={400} alt='post image preview' src={`/${backViewImage}`} blurDataURL={`/${backViewImage}`} placeholder='blur'/> }
           </div>
           </section>
           }

@@ -80,7 +80,6 @@ export const getStaticProps = async (context)=>{
     return{
       props:{
         property,
-        revalidate:30,
       }
     }
   }

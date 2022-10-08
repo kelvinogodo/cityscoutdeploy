@@ -18,7 +18,7 @@ const Posts = ({post}) => {
       </section>
       <section className="post-container">
         <div className="post-img-container" style={{position:'relative'}}>
-          <Image src={`/${post.image}`} alt={`${post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`/${post.image}`}  />
+          <Image src={`${post.image}`} alt={`${post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`/${post.image}`}  />
         </div>
         <div className="post-text-container">
           <h1>{post.title}</h1>
@@ -28,7 +28,7 @@ const Posts = ({post}) => {
           <span className="post-date-container">
             <p>posted : {post.date}</p>
           </span>
-          <p>author: {post.author}</p>
+          <p>by: {post.author}</p>
         </div>
       </section>
     </main>
@@ -65,7 +65,6 @@ export const getStaticProps = async (context)=>{
     return{
       props:{
         post,
-        revalidate:30,
       }
     }
   }
