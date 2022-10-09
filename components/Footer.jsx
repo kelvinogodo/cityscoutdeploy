@@ -39,12 +39,12 @@ const Footer = () => {
           <a href='https://www.instagram.com/cityscoutrealtors/' target='_blank' rel="noreferrer">
             instagram
           </a>
-          <a href='/'>
+          <Link href='/'>
             twitter
-          </a>
-          <a href='/'>
+          </Link>
+          <Link href='/'>
             email
-          </a>
+          </Link>
         </div>
         <div className="foot">
           <div className="footer-header">
