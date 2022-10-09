@@ -2269,6 +2269,9 @@ footer{
 
 }
 @media screen and (max-width:740px) {
+  .page-header{
+    display: none;
+  }
 .featured-post-image-container{
   position:absolute;
   top:0;
