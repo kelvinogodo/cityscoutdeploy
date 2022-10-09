@@ -10,14 +10,14 @@ const Properties = ({property}) => {
         <meta name="author" content='ogodo dominic' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="page-header" style={{backgroundImage:'url(/realestate (16).jpg)'}}>
+      <div className="page-header" style={{backgroundImage:'url(/realestate (1).jpg)'}}>
       </div>
       <section className='page'>    
           <div className="left-description-body">
-            <Image src={`${property.frontViewImage}`} alt="" className="upper-grid" width={420} height={420} />
+            <Image src={`${property.frontViewImage}`} alt="" className="upper-grid" width={420} height={420} placeholder='blur' blurDataURL={`${property.frontViewImage}`} />
             <div className="lower-grid">
-              <Image src={`${property.sideViewImage}`} alt="" width={420} height={420} />
-              <Image src={`${property.backViewImage}`} alt="" width={420} height={420} />
+              <Image src={`${property.sideViewImage}`} className='img' alt="" width={420} height={420} placeholder='blur' blurDataURL={`${property.sideViewImage}`}/>
+              <Image src={`${property.backViewImage}`} alt="" className='img' width={420} height={420} placeholder='blur' blurDataURL={`${property.backViewImage}`}/>
             </div>
           </div>
           <div className="right-description-body">
