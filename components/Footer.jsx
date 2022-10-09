@@ -33,18 +33,18 @@ const Footer = () => {
             <h2>social platforms</h2>
             <span className="line"></span>
           </div>
-          <Link href='https://web.facebook.com/profile.php?id=100086289660325'>
+          <a href='https://web.facebook.com/profile.php?id=100086289660325' target='_blank' rel="noreferrer">
             facebook
-          </Link>
-          <Link href='https://www.instagram.com/cityscoutrealtors/'>
+          </a>
+          <a href='https://www.instagram.com/cityscoutrealtors/' target='_blank' rel="noreferrer">
             instagram
-          </Link>
-          <Link href='/'>
+          </a>
+          <a href='/'>
             twitter
-          </Link>
-          <Link href='/'>
+          </a>
+          <a href='/'>
             email
-          </Link>
+          </a>
         </div>
         <div className="foot">
           <div className="footer-header">
