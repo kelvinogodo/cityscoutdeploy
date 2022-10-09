@@ -9,9 +9,6 @@ const Footer = () => {
             <h2>quik links</h2>
             <span className="line"></span>
           </div>
-          <Link href='/'>
-            home
-          </Link>
           <Link href='/Service'>
             service
           </Link>
@@ -36,11 +33,11 @@ const Footer = () => {
             <h2>social platforms</h2>
             <span className="line"></span>
           </div>
-          <Link href='/'>
+          <Link href='https://web.facebook.com/profile.php?id=100086289660325'>
             facebook
           </Link>
-          <Link href='/'>
-            whatsApp
+          <Link href='https://www.instagram.com/cityscoutrealtors/'>
+            instagram
           </Link>
           <Link href='/'>
             twitter
@@ -55,7 +52,7 @@ const Footer = () => {
             <span className="line"></span>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, provident quas deserunt fuga voluptatem repellat.
+            Stay in a loop
           </p>
         </div>
       </div>   

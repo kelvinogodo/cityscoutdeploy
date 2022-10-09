@@ -63,11 +63,11 @@ const Contact = () => {
         </span>
         <span className="contact-cards">
           <ImWhatsapp />
-          <h2>@cityScoutRealtors.whatsapp.com</h2>
+          <a href='https://www.instagram.com/cityscoutrealtors/' target='_blank'>@cityScoutRealtors.instagram.com</a>
         </span>
         <span className="contact-cards">
           <FaFacebookSquare />
-          <h2>@cityScoutRealtors.facebook.com</h2>
+          <a href='https://web.facebook.com/profile.php?id=100086289660325' target='_blank'>@cityScoutRealtors.facebook.com</a>
         </span>
       </section>
       <section className="map-container">

@@ -1,11 +1,12 @@
 import Head from "next/head"
 import Link from "next/link"
+import Image from 'next/image'
 const Properties = ({property}) => {
   return (
     <main className='page-container'>
       <Head>
         <title>{property.title}</title>
-        <meta name="description" content={`${property.title}`} />
+        <meta name="description" content={`${property.title}`}/>
         <meta name="author" content='ogodo dominic' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -13,10 +14,10 @@ const Properties = ({property}) => {
       </div>
       <section className='page'>    
           <div className="left-description-body">
-            <img src={`${property.frontViewImage}`} alt="" className="upper-grid" />
+            <Image src={`${property.frontViewImage}`} alt="" className="upper-grid" width={420} height={420} />
             <div className="lower-grid">
-              <img src={`${property.sideViewImage}`} alt=""></img>
-              <img src={`${property.backViewImage}`} alt=""></img>
+              <Image src={`${property.sideViewImage}`} alt="" width={420} height={420} />
+              <Image src={`${property.backViewImage}`} alt="" width={420} height={420} />
             </div>
           </div>
           <div className="right-description-body">
