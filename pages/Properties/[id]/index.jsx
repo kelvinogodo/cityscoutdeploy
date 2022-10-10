@@ -84,24 +84,6 @@ export const getServerSideProps = async (context)=>{
       }
     }
   }
-  // export const getStaticPaths = async()=>{
-  //   const req = await fetch(`${getBaseApiUrl()}/api/properties`,
-  //   {
-  //     method:'GET',
-  //     headers:{
-  //       Accept: "application/json; charset=UTF-8",
-  //       'Content-Type': 'application/json',
-  //       'User-Agent': '*',
-  //     }
-  //   })
-  //   const properties = await req.json()
-  //   const ids = Array.isArray(properties) ? properties.map(post =>(post._id)) : []
-  //   const paths = ids.map(id =>({params : {id : id.toString()}}))
-  //   return{
-  //     paths,
-  //     fallback:false,
-  //   }
-  // }
   
 export default Properties
 

@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import Parser from 'html-react-parser'
-const Posts = ({post,id}) => {
+import parse from 'html-react-parser'
+const Posts = ({post}) => {
   return (
     <main className='page-container'>
       <Head>
@@ -18,12 +18,12 @@ const Posts = ({post,id}) => {
       </section>
       <section className="post-container">
         <div className="post-img-container" style={{position:'relative'}}>
-          <Image src={`${post.image}`} alt={`${post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`${post.image}`}  />
+          <Image src={`${post.image}`} alt={`${post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`${post.image}`}/>
         </div>
         <div className="post-text-container">
           <h1>{post.title}</h1>
           <div className="ProseMirror">
-            {Parser(post.body)}
+            {parse(post.body)}
           </div>
           <span className="post-date-container">
             <p>posted : {post.date}</p>
@@ -48,45 +48,25 @@ export const getBaseApiUrl = () => {
   return url;
 };
 
-// export const getStaticPaths = async()=>{
-//   const req = await fetch(`${getBaseApiUrl()}/api/posts`,
-//   {
-//     method:'GET',
-//     headers:{
-//       Accept: "application/json; charset=UTF-8",
-//       'Content-Type': 'application/json',
-//       'User-Agent': '*',
-//     }
-//   }
-//   )
-//   const posts = await req.json()
-//   const ids = Array.isArray(posts) ? posts.map(post =>(post.title)) : []  
-//   const paths = ids.map(id =>({params : {id : id}}))
-//   return{
-//     paths,
-//     fallback:false,
-//   }
-// }
-export default Posts
 
-export async function getServerSideProps(context){
+export const getServerSideProps = async (context)=>{
   const id = context.params.id
-  console.log(context)
-  try{
-    const req = await fetch(`${getBaseApiUrl()}/api/posts/${id}`)
-    const post = await req.json()
-    console.log(post)
-    return{
-      props:{
-        post,
-        id
-      }
+  const req = await fetch(`${getBaseApiUrl()}/api/posts/${id}`,
+  {
+    method:'GET',
+    headers:{
+      Accept: "application/json; charset=UTF-8",
+      'Content-Type': 'application/json',
+      'User-Agent': '*',
+    }
+  })
+  const post = await req.json()
+  console.log(post)
+  return{
+    props:{
+      post
     }
   }
-  catch(error){
-    console.log(error)
-  };
 }
 
-
-
+export default Posts
