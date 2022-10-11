@@ -2799,4 +2799,7 @@ footer{
   .lower-grid img{
     margin-bottom:20px;
   }
+  .blog-header a{
+    font-size: 1rem;
+  }
 }
