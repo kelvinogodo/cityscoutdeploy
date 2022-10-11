@@ -54,6 +54,13 @@ const Dashboard = () => {
   }
   return (
     <>
+    <Head>
+        <title>
+          real estate brokerage and development
+        </title>
+        <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
+        <link rel="icon" href="/favicon.jpg" />
+      </Head>
         <div className='mobile-tabs'>
             <span className='user-icon-container'>
                 <FaUserCircle className='svg'/>

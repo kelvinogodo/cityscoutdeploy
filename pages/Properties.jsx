@@ -5,10 +5,12 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import Link from 'next/link'
+import Head from 'next/head'
 import {BsSearch} from 'react-icons/bs'
 import Card from '../components/Card'
 import { useState } from 'react'
 const Properties = ({properties}) => {
+
   const [filter,setFilter]= useState(Array.isArray(properties) ? properties : [] )
     
       const filterProperties = (title,keyword)=>{
@@ -50,7 +52,15 @@ const Properties = ({properties}) => {
 ])
 const [searchKeywords, setSearchKeywords] = useState() 
   return (
+    
     <main className='property-page'>
+      <Head>
+        <title>
+          real estate brokerage and development
+        </title>
+        <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
+        <link rel="icon" href="/favicon.jpg" />
+      </Head>
       <section className="left-container-post-card property-landpage">
         <img src="/house (3).jpg" alt="" className='blog-img'/>
         <div className="blog-card-text-container property-landpage-container">

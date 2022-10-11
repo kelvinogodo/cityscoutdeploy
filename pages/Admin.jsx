@@ -78,6 +78,13 @@ const Admin = () => {
   }
   return (
     <section className='login-form-container'>
+      <Head>
+        <title>
+          real estate brokerage and development
+        </title>
+        <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
+        <link rel="icon" href="/favicon.jpg" />
+      </Head>
         <form className="login-form" onSubmit={(e)=>{
           e.preventDefault()
           createAdmin()}}>

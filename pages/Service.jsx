@@ -13,7 +13,7 @@ const Service = () => {
           real estate brokerage and development
         </title>
         <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
-        <link rel="icon" href="/cityScoutlogo.png" />
+        <link rel="icon" href="/favicon.jpg" />
       </Head>
       <section className="service-card-container">
         <div className="service-card">

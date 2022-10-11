@@ -38,7 +38,7 @@ const Contact = () => {
         contact page for property Agents in Abakaliki
       </title>
       <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.jpg" />
     </Head>
       <section className="contact-landpage">
         <img src="/contact-img2.jpg" alt="" className="contact-img" />

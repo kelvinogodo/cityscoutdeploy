@@ -34,7 +34,7 @@ export default function Home({featuredposts,data}) {
       <Head>
         <title>Property Agents in Abakaliki</title>
         <meta name="description" content="A Property agency website, for properties around ebonyi state, Nigeria" />
-        <link rel="icon" href="/cityScoutlogo.png" />
+        <link rel="icon" href="/favicon.jpg" />
       </Head>
       <Landpage />
       <PopularHeader text={'latest properties'}/>

@@ -12,7 +12,7 @@ const About = () => {
         property Agents in Abakaliki
       </title>
       <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
-      <link rel="icon" href="/cityScoutlogo.png" />
+      <link rel="icon" href="/favicon.jpg" />
     </Head>
     <main className="about-page">
       <section className="about-landpage" >
@@ -22,16 +22,16 @@ const About = () => {
             <h1>about abakaliki real estate</h1>
             <span className="line"></span>
           </span>
-          <p>city scout realtors is a property agent based in Abakaliki. our focus is to help pepople find, and buy legal properties, whether buildings or land , in the state. we are also committed to delivering quality property development services. 
+          <p>city scout realtors is a property agent based in Abakaliki. Our focus is to help people find, and buy legal properties, whether buildings or land , in the state. We are also committed to delivering quality property development services. 
           </p>
           <p>
-          the team is made up of experienced and young professionals with a taste for innovation and quality property brokerage
+          the team is made up of experienced and young professionals with a taste for innovation and quality property brokerage.
           </p>
         </div>
       </section>
       <section className="team-section">
         <span className="team-section-header">
-          <h2>what we stand for</h2>
+          <h2>What we stand for</h2>
           <span className="line"></span>
         </span>
         <div className="team-card">
@@ -39,35 +39,35 @@ const About = () => {
             <img src="/light (1).png" alt="" />
           </div>
           <div className="team-card-text-container">
-            <h2>core value</h2>
+            <h2>Core value</h2>
             <div className="about-text-container-card">
               <BsLightbulb className='about-icons'/>
               <span className="about-text-container-span">
-                <h3>innovation</h3>
+                <h3>Innovation</h3>
                 <span className="line about-line"></span>
-                <p>we employ recent technology and creativity to deliver holistic service</p>
+                <p>We employ recent technology and creativity to deliver holistic service</p>
               </span>
             </div>
             <div className="about-text-container-card">
               <SiFsecure className='about-icons'/>
               <span className="about-text-container-span">
-                <h3>integrity</h3>
+                <h3>Integrity</h3>
                 <span className="line about-line"></span>
-                <p>we consistently uphold ethical principles and morals. we do not say it, we do it</p>
+                <p>We consistently uphold ethical principles and morals. We do not say it, we do it</p>
               </span>
             </div>
             <div className="about-text-container-card">
               <RiShieldUserFill className='about-icons'/>
               <span className="about-text-container-span">
-                <h3>customer satisfaction</h3>
+                <h3>Customer Satisfaction</h3>
                 <span className="line about-line"></span>
-                <p>you are important and that is why your satisfaction comes ahead of anything else</p>
+                <p>You are important and that is why your satisfaction comes ahead of anything else.</p>
               </span>
             </div>
             <div className="about-text-container-card">
               <GiProgression className='about-icons' />
               <span className="about-text-container-span">
-                <h3>continues growth</h3>
+                <h3>Continues Growth</h3>
                 <span className="line about-line"></span>
                 <p>We learn everyday and we improve every second</p>
               </span>
@@ -79,7 +79,7 @@ const About = () => {
             <img src="/vision.webp" alt="" />
           </div>
           <div className="team-card-text-container">
-            <h2>our vision</h2>
+            <h2>Our Vision</h2>
             <span className="line"></span>
             <p>To easily connect real estate investors to the right properties in Ebonyi state and drive seamless acquisition</p>
           </div>
