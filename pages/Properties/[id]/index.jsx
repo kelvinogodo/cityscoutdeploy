@@ -17,8 +17,8 @@ const Properties = ({property}) => {
           <div className="left-description-body">
             <Image src={`${property.frontViewImage}`} alt="" className="upper-grid" width={420} height={420} placeholder='blur' blurDataURL={`${property.frontViewImage}`} />
             <div className="lower-grid">
-              <Image src={`${property.sideViewImage}`} className='img' alt="" width={420} height={420} placeholder='blur' blurDataURL={`${property.sideViewImage}`}/>
-              <Image src={`${property.backViewImage}`} alt="" className='img' width={420} height={420} placeholder='blur' blurDataURL={`${property.backViewImage}`}/>
+              <Image src={`${property.sideViewImage}`} className='lower-img' alt="" width={420} height={420} placeholder='blur' blurDataURL={`${property.sideViewImage}`}/>
+              <Image src={`${property.backViewImage}`} alt="" className='lower-img' width={420} height={420} placeholder='blur' blurDataURL={`${property.backViewImage}`}/>
             </div>
           </div>
           <div className="right-description-body">

@@ -2065,12 +2065,9 @@ footer{
   object-fit:cover;
   margin:30px 0px 0px 0px ;
 }
-/* .page-header:after{ */
-  /* background:none; */
-/* } */
-/* .page-header{ */
-  /* background-image:url('/realestate (1).jpg'); */
-/* } */
+.lower-img{
+  margin-bottom: 30px;
+}
 @media screen and (max-width:1300px) {
   .slide{
     min-width: 350px;
