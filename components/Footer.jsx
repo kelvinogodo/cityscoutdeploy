@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className="foot">
           <div className="footer-header">
-            <h2>patners</h2>
+            <h2>partners</h2>
             <span className="line"></span>
           </div>
           <p>tansian geospatial consult</p>

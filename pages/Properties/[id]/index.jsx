@@ -15,10 +15,10 @@ const Properties = ({property}) => {
       </div>
       <section className='page'>    
           <div className="left-description-body">
-            <Image src={`${property.frontViewImage}`} alt="" className="upper-grid" width={420} height={420} placeholder='blur' blurDataURL={`${property.frontViewImage}`} />
+            <Image src={`${property.frontViewImage}`} alt={`${property.description}`} className="upper-grid" width={420} height={420} placeholder='blur' blurDataURL={`${property.frontViewImage}`} />
             <div className="lower-grid">
-              <Image src={`${property.sideViewImage}`} className='img lower-prop-img' alt="" width={420} height={420} placeholder='blur' blurDataURL={`${property.sideViewImage}`}/>
-              <Image src={`${property.backViewImage}`} alt="" className=' img lower-prop-img ' width={420} height={420} placeholder='blur' blurDataURL={`${property.backViewImage}`}/>
+              <Image src={`${property.sideViewImage}`} className='img lower-prop-img' alt={`${property.description}`} width={420} height={420} placeholder='blur' blurDataURL={`${property.sideViewImage}`}/>
+              <Image src={`${property.backViewImage}`} alt={`${property.description}`} className=' img lower-prop-img ' width={420} height={420} placeholder='blur' blurDataURL={`${property.backViewImage}`}/>
             </div>
           </div>
           <div className="right-description-body">
