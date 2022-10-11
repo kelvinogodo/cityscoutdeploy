@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="foot-container">
         <div className="foot">
           <div className="footer-header">
-            <h2>quik links</h2>
+            <h2>company</h2>
             <span className="line"></span>
           </div>
           <Link href='/Service'>
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="foot">
           <div className="footer-header">
-            <h2>social platforms</h2>
+            <h2>we are social</h2>
             <span className="line"></span>
           </div>
           <a href='https://web.facebook.com/profile.php?id=100086289660325' target='_blank' rel="noreferrer">

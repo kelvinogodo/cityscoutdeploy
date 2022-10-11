@@ -80,20 +80,15 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
 
   const createPost = async (url)=>{
-    const d = new Date
-
-    const day = d.getDate().toLocaleString()
-    const month = d.getMonth().toLocaleString()
-    const year = d.getFullYear().toLocaleString()
-    const currentDate = `${day}-${month}-${year}`
-    const date = currentDate
+    const d = new Date().toLocaleDateString()
+    const date = d
     setPostDate(date)
     const newPost = {
       title:`${postTitle}`,
       body:`${postBody}`,
       image:url,
       author:`${postAuthor}`,
-      date:`${postDate}`,
+      date:`${date}`,
       category:`${postCategory}`
     }
     if(postImage !== 'undefined'){
