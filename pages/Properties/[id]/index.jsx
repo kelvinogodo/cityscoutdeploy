@@ -10,7 +10,8 @@ const Properties = ({property}) => {
         <meta name="author" content='ogodo dominic' />
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-      <div className="page-header" style={{backgroundImage:'url(/realestate (1).jpg)'}}>
+      <div className="page-header" style={{position:'relative',}}>
+        <Image src={property.frontViewImage} layout='fill' blurDataURL={property.frontViewImage} placeholder='blur'/>
       </div>
       <section className='page'>    
           <div className="left-description-body">
