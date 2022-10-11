@@ -82,9 +82,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const createPost = async (url)=>{
     const d = new Date
 
-    const day = d.getDate()
-    const month = d.getMonth()
-    const year = d.getFullYear()
+    const day = d.getDate().toLocaleString()
+    const month = d.getMonth().toLocaleString()
+    const year = d.getFullYear().toLocaleString()
     const currentDate = `${day}-${month}-${year}`
     const date = currentDate
     setPostDate(date)
