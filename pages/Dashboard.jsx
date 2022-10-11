@@ -10,6 +10,7 @@ import {AiOutlineHome} from 'react-icons/ai'
 import {ImUserPlus} from 'react-icons/im'
 import {IoIosSwitch} from 'react-icons/io'
 import {MdEdit} from 'react-icons'
+import Head from 'next/head'
 import {RiEdit2Fill} from 'react-icons/ri'
 const Dashboard = () => {
     const [showOverview, setShowOverview] = useState(true)

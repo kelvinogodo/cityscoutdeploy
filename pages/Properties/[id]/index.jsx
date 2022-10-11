@@ -8,7 +8,7 @@ const Properties = ({property}) => {
         <title>{property.title}</title>
         <meta name="description" content={`${property.title}`}/>
         <meta name="author" content='ogodo dominic' />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.jpg" />
       </Head>
       <div className="page-header" style={{backgroundImage:'url(/realestate (1).jpg)'}}>
       </div>

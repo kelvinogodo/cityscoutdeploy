@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import Swal from 'sweetalert2'
-
+import Head from 'next/head'
 
 const Admin = () => {
   const [password, setPassword] = useState()

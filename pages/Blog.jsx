@@ -2,6 +2,7 @@ import Link from "next/link"
 import BlogCard from "../components/BlogCard"
 import Image from 'next/image'
 import {useState} from 'react'
+import Head from 'next/head'
 import { Swiper, SwiperSlide } from "swiper/react";
 import PopularHeader from '../components/PopularHeader'
 // Import Swiper styles
