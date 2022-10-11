@@ -82,8 +82,8 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const createPost = async (url)=>{
     console.log('the create post function just ran')
     const d = new Date
-    const date = `${d.getDate()} ${d.getMonth()} ${d.getFullYear()}`
-    setPostDate(date.toLocaleDateString('en-US'))
+    const date = d.toLocaleDateString('en-US')
+    setPostDate(date)
     const newPost = {
       title:`${postTitle}`,
       body:`${postBody}`,
