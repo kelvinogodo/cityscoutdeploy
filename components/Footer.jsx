@@ -25,8 +25,7 @@ const Footer = () => {
             <span className="line"></span>
           </div>
           <p>tansian geospatial consult</p>
-          <p>beloved architectural concept</p>
-          <p>ebonyi real-estate org</p>
+          <p>beloved global concept developers</p>
         </div>
         <div className="foot">
           <div className="footer-header">
@@ -48,11 +47,11 @@ const Footer = () => {
         </div>
         <div className="foot">
           <div className="footer-header">
-            <h2>newsletter</h2>
+            <h2>stay in the loop</h2>
             <span className="line"></span>
           </div>
           <p>
-            Stay in a loop
+            Do not miss any opportunity. Subscribe and get informed on the latest properties, industry trenda and news, and investment tips.
           </p>
         </div>
       </div>   
