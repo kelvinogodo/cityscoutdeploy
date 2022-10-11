@@ -80,9 +80,13 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   }
 
   const createPost = async (url)=>{
-    console.log('the create post function just ran')
     const d = new Date
-    const date = d.toLocaleDateString('en-US')
+
+    const day = d.getDate()
+    const month = d.getMonth()
+    const year = d.getFullYear()
+    const currentDate = `${day}-${month}-${year}`
+    const date = currentDate
     setPostDate(date)
     const newPost = {
       title:`${postTitle}`,
