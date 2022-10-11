@@ -83,7 +83,7 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     console.log('the create post function just ran')
     const d = new Date
     const date = `${d.getDate()} ${d.getMonth()} ${d.getFullYear()}`
-    setPostDate(date)
+    setPostDate(date.toLocaleDateString())
     const newPost = {
       title:`${postTitle}`,
       body:`${postBody}`,
