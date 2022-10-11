@@ -38,7 +38,7 @@ const Properties = ({property}) => {
                 <h4>contact an agent</h4>                
               </div>
               <div className="description-card">
-                <span className='key'>mobile</span><span className='value'>07042244530</span>
+                <span className='key'>mobile</span><span className='value'>08104673484</span>
               </div>
               <div className="description-card">
               <span className='key'>email</span><span className='value'>kelvinchukwuebuka@gmail.com</span>
