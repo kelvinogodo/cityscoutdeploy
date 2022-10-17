@@ -2081,6 +2081,8 @@ footer{
 }
 .post-text-container{
   width:80%;
+  margin: auto;
+  align-self: center;
 }
 @media screen and (max-width:1300px) {
   .slide{
