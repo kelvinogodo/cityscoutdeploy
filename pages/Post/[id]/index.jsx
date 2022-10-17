@@ -21,14 +21,14 @@ const Posts = ({post}) => {
           <Image src={`${post.image}`} alt={`${post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`${post.image}`}/>
         </div>
         <div className="post-text-container">
+          <span className="post-date-container">
+            <p> {post.date}</p>
+          </span>
+          <p>Author : {post.author}</p>
           <h1>{post.title}</h1>
           <div className="ProseMirror">
             {parse(post.body)}
           </div>
-          <span className="post-date-container">
-            <p>posted : {post.date}</p>
-          </span>
-          <p>by: {post.author}</p>
         </div>
       </section>
     </main>

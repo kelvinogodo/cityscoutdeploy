@@ -2068,6 +2068,20 @@ footer{
 .lower-prop-img{
   margin-bottom: 30px !important;
 }
+.post-img-container{
+  width:80%;
+  height:500px;
+  margin-bottom: 50px;
+}
+.post-img-container img{
+  object-fit: contain;
+}
+.post-container{
+  flex-direction: column;
+}
+.post-text-container{
+  width:80%;
+}
 @media screen and (max-width:1300px) {
   .slide{
     min-width: 350px;
