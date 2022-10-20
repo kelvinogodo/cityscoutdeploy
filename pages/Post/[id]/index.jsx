@@ -18,7 +18,7 @@ const Posts = ({post}) => {
       </section>
       <section className="post-container">
         <div className="post-img-container" style={{position:'relative'}}>
-          <Image src={`${post.image}`} alt={`${post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`${post.image}`}/>
+          <Image src={`${post.image}`} alt={`${post.alt ? post.alt : post.title} image`} layout='fill' priority placeHolder='blur' blurDataURL={`${post.image}`}/>
         </div>
         <div className="post-text-container">
           <span className="post-date-container">
