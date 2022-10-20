@@ -5,17 +5,21 @@ export default async function   createPost(req, res){
     await connectMongo() 
     console.log("connected successfully")
     try {
-        await Post.findOneAndUpdate({"_id": req.body.id},
-         {title : req.body.title, body: req.body.body,image: req.body.image,category : req.body.category},
-        (error, data)=>{
-            if(error){
-                console.log(error)
-            }
-            else{
-                console.log(data)
-            }
+       const post = await Post.findOne({"_id": req.body.id})
+        if(post.body !== req.body.body && req.body.body !== 'undefined'){
+            await Post.updateOne({"_id": req.body.id},{
+                $set : {body : req.body.body}
+            })
         }
-        )
+        if(req.body.image == ''){
+            return
+        }else{
+            await Post.updateOne({"_id": req.body.id},{
+                $set : {image : req.body.image},
+                $set : {title: req.body.title}
+            })
+        }
+
         res.status(200).json({status:200})
         console.log("post successfully updated")
     } catch (error) {

@@ -6,7 +6,10 @@ const postSchema = new Schema({
     body:{type:String,required:true},
     date:{type:String,required:true},
     author:{type:String,required:true},
-    category:{type:String,required:true}
+    category:{type:String,required:true},
+    alt:{type:String,},
+    seoTitle:{type:String,},
+    meta:{type:String,},
 })
 
 const Post = models.Post || model('Post', postSchema)

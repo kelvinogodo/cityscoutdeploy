@@ -9,7 +9,10 @@ export default async function   createPost(req, res){
             date:req.body.date !== 'undefined' ? req.body.date : Date.now().toString(),
             author:req.body.author,
             image:req.body.image,
-            category:req.body.category
+            category:req.body.category,
+            alt:req.body.alt,
+            seoTitle:req.body.seoTitle,
+            meta:req.body.meta,
         })
         res.json('created')
     } catch (error) {

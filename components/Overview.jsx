@@ -59,6 +59,9 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
   const [postImage, setPostImage] = useState()
   const [postDate,setPostDate] = useState()
   const [postCategory,setPostCategory] = useState('normal')
+  const [alt, setAlt] = useState()
+  const [seoTitle, setSeo] = useState()
+  const [meta, setMeta] = useState()
 
   const [uploadImage,setUploadImage] = useState()
 
@@ -89,7 +92,10 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       image:url,
       author:`${postAuthor}`,
       date:`${date}`,
-      category:`${postCategory}`
+      category:`${postCategory}`,
+      alt: alt,
+      seoTitle: seoTitle,
+      meta: meta,
     }
     if(postImage !== 'undefined'){
     const req = await fetch(`${getBaseApiUrl()}/createPost`,
@@ -253,50 +259,6 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
     fetchData()
   }
   const [activeProperty,setActiveProperty] = useState()
-  const editPost = async (e)=>{
-    e.preventDefault()
-    const editedPost={
-      title: newPostTitle.current.innerText,
-      body: newPostBody,
-      image: newPostImage,
-      category:newPostCategory,
-    }
-    console.log(editedPost)
-
-    const editRequest = await fetch(`${getBaseApiUrl()}/editPost`,
-    {
-      method:'POST',
-      headers:{
-        'content-Type': 'application/json'
-      },
-      body:JSON.stringify({
-        id:activePostId,
-        title: editedPost.title,
-        body:editedPost.body,
-        image:editedPost.image,
-        category:editedPost.category
-      }) 
-    }
-    )
-    const postResponse = await editRequest.json() 
-    switch (postResponse.status) {
-      case 200:
-        Swal.fire(
-          'congrats',
-          'post successfully updated ',
-          'success'
-        )
-        break;
-    
-      default: Swal.fire(
-        'warning',
-        'something went wrong ',
-        'warning'
-      )
-        break;
-    }
-    fetchData()
-  }
   const [activePostId, setActivePostId] = useState()
   const [activePost,setActivePost] = useState()
 
@@ -413,6 +375,64 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
       active:false,
     },
   ])
+
+  const editPost = async (param)=>{
+    const editedPost={
+      title: newPostTitle.current.innerText,
+      body: newPostBody,
+      image: param,
+    }
+    console.log(editedPost)
+
+    const editRequest = await fetch(`${getBaseApiUrl()}/editPost`,
+    {
+      method:'POST',
+      headers:{
+        'content-Type': 'application/json'
+      },
+      body:JSON.stringify({
+        id:activePostId,
+        title: editedPost.title,
+        body:editedPost.body,
+        image:editedPost.image,
+      }) 
+    }
+    )
+    const postResponse = await editRequest.json() 
+    switch (postResponse.status) {
+      case 200:
+        Swal.fire(
+          'congrats',
+          'post successfully updated ',
+          'success'
+        )
+        break;
+    
+      default: Swal.fire(
+        'warning',
+        'something went wrong ',
+        'warning'
+      )
+        break;
+    }
+    fetchData()
+  }
+  const uploadNewPostImage = async ()=>{
+    setIsLoading(true)
+    const formData = new FormData
+    formData.append('file',newPostImage)
+    formData.append('upload_preset','upload');
+    const req = await fetch('https://api.cloudinary.com/v1_1/duesyx3zu/image/upload',
+      {
+      method:'POST',
+      body:formData,
+    }
+    )
+    const res = await req.json()
+    res && setIsLoading(false)
+    console.log(`${res.secure_url} .... upload ran first`)
+    await editPost(res.secure_url)
+  }
   return (
     <main className='overview-section'>
       {
@@ -430,28 +450,25 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
         }}>
             <FaWindowClose />
         </span>
-        <form className="create-post-form" onSubmit={editPost}>
+        <form className="create-post-form" onSubmit={async function(e){
+          e.preventDefault()
+          if(newPostImage == 'undefined' || null){
+            editPost('')
+          }
+          else{
+            await uploadNewPostImage()
+          }
+          }}>
         <div contentEditable='true' ref={newPostTitle} className='edit-input'>{activePost ? activePost.title : 'edit title'}</div>
           <div className="tiptap-container">
             <TipTap setPostBody={setNewPostBody} body={activePost ? activePost.body : 'edit body'}/>
           </div>
           <input type="file" name='images' accept=".png,.jpg,.webp,.svg,.jpeg" className='file-upload-input'
              onChange={(e)=>{
-              const image = e.target.files[0].name.toString()
+              const image = e.target.files[0]
               setNewPostImage(image)
             }}
-            required
           />
-          <div className="category-btn-container"> 
-          {
-            category.map(categ =>(
-              <button key={categ.id} onClick={()=>{
-                setNewPostCategory(categ.title)
-                setCategory(category.map(cat =>(cat.title === categ.title ? {...cat, active:true} : {...cat,active:false})))
-              }} className={`category-btn ${categ.active ? 'active' : ''}`}>{categ.title}</button>
-            ))
-          }
-          </div>
           <input type="submit" value="publish" className='create-btn'/>
         </form>
         </div>
@@ -542,6 +559,24 @@ const Overview = ({showOverview,showCreateSection,showEditSection,showCreateProp
             onChange={(e)=>{
               const title = e.target.value.toString()
               setPostTitle(title)
+            }}
+            />
+            <input type="text" required placeholder='Image alt text'className='input' 
+            onChange={(e)=>{
+              const alt = e.target.value
+              setAlt(alt)
+            }}
+            />
+            <input type="text" required placeholder='SEO title'className='input' 
+            onChange={(e)=>{
+              const alt = e.target.value
+              setSeo(alt)
+            }}
+            />
+            <input type="text" required placeholder='meta description'className='input' 
+            onChange={(e)=>{
+              const alt = e.target.value
+              setMeta(alt)
             }}
             />
             <div className="tiptap-container">

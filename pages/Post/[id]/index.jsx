@@ -6,9 +6,9 @@ const Posts = ({post}) => {
   return (
     <main className='page-container'>
       <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={`${post.title}`} />
-        <meta name="author" content='ogodo dominic' />
+        <title>{post.seoTitle ? seoTitle : post.title}</title>
+        <meta name="description" content={`${post.meta ? post.meta : post.title}`} />
+        <meta name="author" content={`${post.author ? post.author : 'ogodo dominic'}`} />
         <link rel="icon" href="/favicon.jpg" />
       </Head>
       <section className="blog-header">
@@ -26,7 +26,7 @@ const Posts = ({post}) => {
           </span>
           <p>Author : {post.author}</p>
           <h1>{post.title}</h1>
-          <div className="ProseMirror">
+          <div className="ProseMirror my-post-body">
             {parse(post.body)}
           </div>
         </div>

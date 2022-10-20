@@ -85,7 +85,7 @@ const Admin = () => {
         <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-        <form className="login-form" onSubmit={(e)=>{
+        {/* <form className="login-form" onSubmit={(e)=>{
           e.preventDefault()
           createAdmin()}}>
           <h2>welcome admin</h2>
@@ -99,7 +99,7 @@ const Admin = () => {
             setPassword(e.target.value)
           }} placeholder='enter your password'/>
           <input type="submit" value="create account" className='login-submit-btn'/>
-        </form>
+        </form> */}
 
         <form  onSubmit={(e)=>{
           e.preventDefault()
