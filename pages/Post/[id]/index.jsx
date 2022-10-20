@@ -9,7 +9,7 @@ const Posts = ({post}) => {
         <title>{post.seoTitle ? seoTitle : post.title}</title>
         <meta name="description" content={`${post.meta ? post.meta : post.title}`} />
         <meta name="author" content={`${post.author ? post.author : 'ogodo dominic'}`} />
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href={`${post.image}`} />
       </Head>
       <section className="blog-header">
         <Link href='/Blog'>blog</Link>
