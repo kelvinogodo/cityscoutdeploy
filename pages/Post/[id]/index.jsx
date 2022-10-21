@@ -6,7 +6,7 @@ const Posts = ({post}) => {
   return (
     <main className='page-container'>
       <Head>
-        <title>{post.seoTitle ? seoTitle : post.title}</title>
+        <title>{post.seoTitle ? post.seoTitle : post.title}</title>
         <meta name="description" content={`${post.meta ? post.meta : post.title}`} />
         <meta name="author" content={`${post.author ? post.author : 'ogodo dominic'}`} />
         <link rel="icon" href={`${post.image}`} />
