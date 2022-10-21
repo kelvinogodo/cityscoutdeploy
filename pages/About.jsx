@@ -67,7 +67,7 @@ const About = () => {
             <div className="about-text-container-card">
               <GiProgression className='about-icons' />
               <span className="about-text-container-span">
-                <h3>Continues Growth</h3>
+                <h3>Continuous Growth</h3>
                 <span className="line about-line"></span>
                 <p>We learn everyday and we improve every second</p>
               </span>
