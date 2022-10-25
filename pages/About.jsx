@@ -11,7 +11,7 @@ const About = () => {
       <title>
         property Agents in Abakaliki
       </title>
-      <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
+      <meta name="description" content="City Scout Realtors is a reliable property agency based in Abakaliki." />
       <link rel="icon" href="/favicon.jpg" />
     </Head>
     <main className="about-page">
@@ -19,7 +19,7 @@ const About = () => {
       <Image src='/cityScoutlogo.png' alt='city scout logo' width={500} height={400} className='about-img'/>
         <div className="about-landpage-container">
           <span className="about-landpage-header">
-            <h1>about abakaliki real estate</h1>
+            <h1>About City Scout Realtors</h1>
             <span className="line"></span>
           </span>
           <p>city scout realtors is a property agent based in Abakaliki. Our focus is to help people find, and buy legal properties, whether buildings or land , in the state. We are also committed to delivering quality property development services. 
@@ -31,7 +31,7 @@ const About = () => {
       </section>
       <section className="team-section">
         <span className="team-section-header">
-          <h2>What we stand for</h2>
+          <h2>What we stand for </h2>
           <span className="line"></span>
         </span>
         <div className="team-card">
@@ -45,7 +45,7 @@ const About = () => {
               <span className="about-text-container-span">
                 <h3>Innovation</h3>
                 <span className="line about-line"></span>
-                <p>We employ recent technology and creativity to deliver holistic service</p>
+                <p>We employ recent technology and creativity to deliver holistic service.</p>
               </span>
             </div>
             <div className="about-text-container-card">
@@ -53,7 +53,7 @@ const About = () => {
               <span className="about-text-container-span">
                 <h3>Integrity</h3>
                 <span className="line about-line"></span>
-                <p>We consistently uphold ethical principles and morals. We do not say it, we do it</p>
+                <p> We consistently uphold ethical principles and morals. We do not say it, we do it.</p>
               </span>
             </div>
             <div className="about-text-container-card">
@@ -65,11 +65,11 @@ const About = () => {
               </span>
             </div>
             <div className="about-text-container-card">
-              <GiProgression className='about-icons' />
+              <GiProgression className='about-icons'/>
               <span className="about-text-container-span">
                 <h3>Continuous Growth</h3>
                 <span className="line about-line"></span>
-                <p>We learn everyday and we improve every second</p>
+                <p>We learn everyday and we improve every second.</p>
               </span>
             </div>
           </div>
@@ -81,17 +81,17 @@ const About = () => {
           <div className="team-card-text-container">
             <h2>Our Vision</h2>
             <span className="line"></span>
-            <p>To easily connect real estate investors to the right properties in Ebonyi state and drive seamless acquisition</p>
+            <p>To easily connect real estate investors to the right properties in Ebonyi state and drive seamless acquisition.</p>
           </div>
         </div>
         <div className="team-card">
-        <div className="team-card-img-container">
+          <div className="team-card-img-container">
             <img src="/target.webp" alt="" />
           </div>
           <div className="team-card-text-container">
             <h2>our mision</h2>
             <span className="line"></span>
-            <p>To unlock the full potential of real estate in the region through technology and innovation</p>
+            <p>To unlock the full potential of real estate in the region through technology and innovation.</p>
           </div>
         </div>
       </section>

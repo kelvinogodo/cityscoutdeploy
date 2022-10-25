@@ -35,9 +35,9 @@ const Contact = () => {
     <main className='contact-page'>
       <Head>
       <title>
-        contact page for property Agents in Abakaliki
+        contact City Scout Realtors
       </title>
-      <meta name="description" content="a property agency website, for properties around ebonyi state, Nigeria" />
+      <meta name="description" content="contact City Scout Realtors" />
       <link rel="icon" href="/favicon.jpg" />
     </Head>
       <section className="contact-landpage">
@@ -46,7 +46,7 @@ const Contact = () => {
           <form className="contact-form" ref={form} onSubmit={sendEmail}>
             <input type="text"required placeHolder='enter your name' name="user_name"/>
             <input type="tel" required placeHolder='enter your phonenumber' name="phone_number"/>
-            <input type="text" placeHolder='enter your email {optional}' name="user_email"/>
+            <input type="text" placeHolder='enter your email' name="user_email"/>
             <textarea name="message" required id="" placeHolder='enter your message'></textarea>
             <input type="submit" value='send message' className='contact-submit-btn'/>
           </form>
@@ -55,11 +55,11 @@ const Contact = () => {
       <section className="contact-details">
         <span className="contact-cards">
           <ImLocation2 />
-          <h2>no:2-old-enugu-road-abakaliki-ebonyi </h2>
+          <h2>no:22-old-enugu-road-abakaliki-ebonyi </h2>
         </span>
         <span className="contact-cards">
           <GoMail />
-          <h2>cityScoutRealtorsSupport@gmail.com</h2>
+          <h2>cityscoutrealtors@gmail.com</h2>
         </span>
         <span className="contact-cards">
           <ImWhatsapp />

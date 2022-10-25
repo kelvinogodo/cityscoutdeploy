@@ -33,7 +33,7 @@ export default function Home({featuredposts,data}) {
     <main className={styles.container}>
       <Head>
         <title>Property Agents in Abakaliki</title>
-        <meta name="description" content="A Property agency website, for properties around ebonyi state, Nigeria" />
+        <meta name="description" content="City Scout Realtors Helps you find properties for sale in Ebonyi state easily" />
         <link rel="icon" href="/favicon.jpg" />
         <meta name="google-site-verification" content="86z9OJ5FVPHC2yFxjeOv3bVreQDTlY3O73ERR0TJqyc" />
       </Head>
