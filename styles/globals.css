@@ -2082,7 +2082,12 @@ footer{
 .post-text-container{
   width:80%;
 }
-
+.featured-post-text{
+  min-height: 100%;
+}
+.featured-post-image-container img{
+  object-fit: contain;
+}
 @media screen and (max-width:1300px) {
   .slide{
     min-width: 350px;
