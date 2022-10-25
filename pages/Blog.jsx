@@ -50,7 +50,7 @@ const Blog = ({featuredposts}) => {
                     </Link>
                 </div>
                 <div className="featured-post-image-container">
-                    <img src={`${featured.image}`} alt="featured post image" priority/>
+                    <Image layout="fill" src={`${featured.image}`} alt="featured post image" priority/>
                 </div>
                 </SwiperSlide>
             )) : ''

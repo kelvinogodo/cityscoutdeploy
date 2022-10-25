@@ -1,4 +1,4 @@
-const siteUrl = 'http://cityscoutrealtors.com'
+const siteUrl = 'https://cityscoutrealtors.com'
 module.exports = {
     siteUrl,
     generateRobotsTxt:true,
