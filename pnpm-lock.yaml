@@ -16,6 +16,7 @@ specifiers:
   multer: 1.4.5-lts.1
   next: 12.2.5
   next-connect: ^0.13.0
+  next-sitemap: ^3.1.29
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.4.0
@@ -36,6 +37,7 @@ dependencies:
   multer: 1.4.5-lts.1
   next: 12.2.5_biqbaboplfbrettd7655fr4n2y
   next-connect: 0.13.0
+  next-sitemap: 3.1.29_next@12.2.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
@@ -62,6 +64,10 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.9
     dev: true
+
+  /@corex/deepmerge/4.0.29:
+    resolution: {integrity: sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==}
+    dev: false
 
   /@emailjs/browser/3.7.0_eslint@8.22.0:
     resolution: {integrity: sha512-qjMKx0uCtFUiZkO6C3XYYtmdHqaoOlt2kcxsYD536u5rHZlfo4DAQGwTVo/y2wunVG5rUgSn3TFKZ7vPfgX6LQ==}
@@ -1943,6 +1949,19 @@ packages:
     resolution: {integrity: sha512-f2G4edY01XomjCECSrgOpb/zzQinJO6Whd8Zds0+rLUYhj5cLwkh6FVvZsQCSSbxSc4k9nCwNuk5NLIhvO1gUA==}
     dependencies:
       trouter: 3.2.0
+    dev: false
+
+  /next-sitemap/3.1.29_next@12.2.5:
+    resolution: {integrity: sha512-7UQyfpI7obOdB11aCswWYfqRn5CR0YSmWHo1r/uarrFfZD5PyyAWtQlgP6jNqDW0eX1ZJWERBwmJ2dLjl4nT8Q==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@next/env': '*'
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': 4.0.29
+      minimist: 1.2.6
+      next: 12.2.5_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /next/12.2.5_biqbaboplfbrettd7655fr4n2y:
