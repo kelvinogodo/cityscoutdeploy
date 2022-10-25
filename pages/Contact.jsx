@@ -6,6 +6,7 @@ import {FaFacebookSquare} from 'react-icons/fa'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
+import {AiTwotonePhone} from 'react-icons/ai'
 const Contact = () => {
   const form = useRef();
 
@@ -56,6 +57,10 @@ const Contact = () => {
         <span className="contact-cards">
           <ImLocation2 />
           <h2>no:22-old-enugu-road-abakaliki-ebonyi </h2>
+        </span>
+        <span className="contact-cards">
+          <AiTwotonePhone />
+          <h2>+2348104673484</h2>
         </span>
         <span className="contact-cards">
           <GoMail />
