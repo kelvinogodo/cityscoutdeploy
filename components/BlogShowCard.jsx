@@ -11,7 +11,7 @@ const BlogShowCard = () => {
             let us know
           </Link>
         </div>
-        <img src="/realestate (17).jpg" alt="" className="blog-show-card-img" /> 
+        <Image src="/realestate (17).jpg" alt="" height={450} width={420}className="blog-show-card-img" priority blurDataUrl={'/realestate (17).jpg'} placeholder='blur'/> 
     </section>
   )
 }
