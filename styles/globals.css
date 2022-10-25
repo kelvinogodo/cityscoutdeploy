@@ -2086,7 +2086,7 @@ footer{
   min-height: 100%;
 }
 .featured-post-image-container img{
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
 }
 @media screen and (max-width:1300px) {
