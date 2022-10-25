@@ -64,7 +64,7 @@ const Contact = () => {
         </span>
         <span className="contact-cards">
           <GoMail />
-          <h2>cityscoutrealtors@gmail.com</h2>
+          <a href='cityscoutrealtors@gmail.com' target='_blank' rel="noreferrer">cityscoutrealtors@gmail.com</a>
         </span>
         <span className="contact-cards">
           <ImWhatsapp />
